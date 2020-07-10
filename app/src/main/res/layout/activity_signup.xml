@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".SignupActivity"
+
     android:gravity="center_horizontal">
 
     <ImageView
@@ -27,6 +28,7 @@
         android:drawableStart="@drawable/ic_account_box_black_24dp"
         android:ems="10"
         android:hint="@string/enter_user_name"
+
         android:inputType="textPersonName" />
 
     <EditText
@@ -38,6 +40,7 @@
         android:drawableStart="@drawable/ic_phone_black_24dp"
         android:ems="10"
         android:hint="@string/enter_phoneNo"
+        android:textColor="#FF9800"
         android:inputType="phone" />
 
     <EditText
@@ -94,6 +97,7 @@
         android:drawablePadding="5dp"
         android:ems="10"
         android:hint="@string/reEnterPwd"
+
         android:inputType="textPassword" />
 
     <Button
