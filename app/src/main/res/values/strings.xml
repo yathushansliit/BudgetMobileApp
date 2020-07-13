@@ -53,4 +53,12 @@
     <string name="enter_phoneNo">Enter Phone No</string>
     <string name="Single">Single</string>
     <string name="married">Married</string>
+    <string name="forgotPwd">Forgot Password?</string>
+    <string name="enterOldPwd">Enter Old Password</string>
+    <string name="enterNewPwd">Enter New Password</string>
+    <string name="resetPwd">Reset Password</string>
+    <string name="enterEmail">Enter Email Address</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="verify">Verify</string>
+    <string name="please_enter_the_verification_code_sent_to_your_email_address">Please enter the verification code sent to your email address</string>
 </resources>

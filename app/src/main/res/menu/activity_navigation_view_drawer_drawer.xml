@@ -44,6 +44,11 @@
             android:icon="@drawable/ic_history_black_24dp"
             android:title="History" />
 
+        <item
+            android:id="@+id/logOut"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:title="Logout" />
+
 
     </group>
 </menu>

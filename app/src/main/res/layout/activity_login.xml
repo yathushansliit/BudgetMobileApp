@@ -25,7 +25,7 @@
         app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:id="@+id/userPhoneNo"
+        android:id="@+id/userEmail"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="106dp"
@@ -33,11 +33,11 @@
         android:layout_marginEnd="92dp"
         android:layout_marginBottom="386dp"
         android:autofillHints=""
-        android:drawableStart="@drawable/ic_phone_black_24dp"
+        android:drawableStart="@drawable/ic_email_black_24dp"
         android:drawablePadding="5dp"
         android:ems="10"
-        android:hint="@string/enter_phoneNo"
-        android:inputType="phone"
+        android:hint="@string/enterEmail"
+        android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,10 +97,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/forgotPwd"
+        android:id="@+id/TVforgotPwd"
         android:layout_width="133dp"
         android:layout_height="22dp"
-
         android:focusable="true"
         android:text="@string/forgot_password"
         android:textAlignment="center"

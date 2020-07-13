@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserVerify">
+
+    <LinearLayout
+
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/verification_code"
+            android:textColor="#FF9800"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/please_enter_the_verification_code_sent_to_your_email_address"
+            android:textColor="#F2FFC107"
+            android:textSize="18dp"
+            android:gravity="center"
+            android:layout_marginTop="30dp"/>
+
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="71dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@color/cardview_shadow_start_color"
+                android:focusable="true"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@android:color/white"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@color/cardview_shadow_start_color"
+                android:focusable="true"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@android:color/white"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@color/cardview_shadow_start_color"
+                android:focusable="true"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@android:color/white"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@color/cardview_shadow_start_color"
+                android:focusable="true"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                 android:layout_marginRight="8dp"
+                android:textColor="@android:color/white"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/verify"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/verify"
+                android:background="#FF9800"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Firstdisplay"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
+        <activity android:name=".UserVerify"></activity>
+        <activity android:name=".forgetUi" />
+        <activity
+            android:name=".Firstdisplay"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".NavigationViewDrawer"
             android:label="@string/title_activity_navigation_view_drawer"

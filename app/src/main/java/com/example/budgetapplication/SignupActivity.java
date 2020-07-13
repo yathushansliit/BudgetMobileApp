@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class SignupActivity extends AppCompatActivity {
 
-     Button button;
+     Button buttontoVerify;
     TextView textView;
 
     @Override
@@ -24,6 +24,15 @@ public class SignupActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(SignupActivity.this,LoginActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        buttontoVerify = findViewById(R.id.nextBtn);
+        buttontoVerify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentVeri = new Intent(SignupActivity.this,UserVerify.class);
+                startActivity(intentVeri);
             }
         });
 

@@ -12,6 +12,7 @@ import android.widget.TextView;
 public class LoginActivity extends AppCompatActivity {
 
     TextView textView;
+    TextView textView01;
     Button button;
 
     @Override
@@ -19,11 +20,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        textView = (TextView)findViewById(R.id.Signup);
+        textView = (TextView) findViewById(R.id.Signup);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,SignupActivity.class);
+                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(intent);
             }
         });
@@ -32,8 +33,19 @@ public class LoginActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,NavigationViewDrawer.class);
+                Intent intent = new Intent(LoginActivity.this, NavigationViewDrawer.class);
                 startActivity(intent);
+            }
+        });
+
+        textView01 = (TextView) findViewById(R.id.TVforgotPwd);
+        textView01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent01 = new Intent(LoginActivity.this,forgetUi.class);
+                startActivity(intent01);
+
             }
         });
 
