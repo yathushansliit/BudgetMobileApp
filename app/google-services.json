@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "831641587076",
+    "firebase_url": "https://budget-friend-8401c.firebaseio.com",
+    "project_id": "budget-friend-8401c",
+    "storage_bucket": "budget-friend-8401c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831641587076:android:1701039405bdb35ed461d1",
+        "android_client_info": {
+          "package_name": "com.example.budgetapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831641587076-j58f5q15ech9irjkbf75mj95vv5to4ea.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZUo7CwPZn37wsCybX1mwP2ijRveWaT5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831641587076-j58f5q15ech9irjkbf75mj95vv5to4ea.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
