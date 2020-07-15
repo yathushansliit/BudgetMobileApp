@@ -25,7 +25,7 @@
         app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:id="@+id/userPhoneNo"
+        android:id="@+id/userEmail"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="106dp"
@@ -36,8 +36,8 @@
         android:drawableStart="@drawable/ic_phone_black_24dp"
         android:drawablePadding="5dp"
         android:ems="10"
-        android:hint="@string/enter_phoneNo"
-        android:inputType="phone"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

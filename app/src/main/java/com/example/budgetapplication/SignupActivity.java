@@ -16,12 +16,16 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignupActivity extends AppCompatActivity {
     EditText mUsername,mPhoneNo,mEmail,mPassword,mRePassword;
     Button mSignUpBtn,mRadio_Single,mRadio_Married;
     TextView textView;
     FirebaseAuth fAuth;
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
 
 
     @Override
