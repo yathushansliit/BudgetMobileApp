@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".AddtoBudgetExpense">
+
+    <Button
+        android:id="@+id/IndividualEx"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_orange_dark"
+        android:text="@string/individual"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/FamilyEx"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_orange_dark"
+        android:text="@string/family"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/ReunionEx"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_orange_dark"
+        android:text="@string/reunion"
+        android:gravity="center"/>
+    <Button
+        android:id="@+id/BirthdayEx"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_orange_dark"
+        android:text="@string/birthday"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/farewellEx"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_orange_dark"
+        android:text="@string/farewell"
+        android:gravity="center"/>
+
+
+
+
+
+
+
+
+</LinearLayout>

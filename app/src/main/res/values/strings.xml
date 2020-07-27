@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">BudgetApplication</string>
-    <string name="Logo">TODO</string>
-    <string name="logo">TODO</string>
+    <string name="Logo">TODO1</string>
+    <string name="logo">TOD</string>
     <string name="title_activity_login">Sign in</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -61,4 +61,282 @@
     <string name="verification_code">Verification Code</string>
     <string name="verify">Verify</string>
     <string name="please_enter_the_verification_code_sent_to_your_email_address">Please enter the verification code sent to your email address</string>
+    <string name="home">Home</string>
+    <string name="todo4">TODO</string>
+    <string name="history">History</string>
+    <string name="event">Event</string>
+    <string name="budget_history">Budget History</string>
+    <string name="todo1">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="todo3">TODO</string>
+    <string name="individual01">Individual</string>
+    <string name="todoaad">image</string>
+    <string name="food">Food</string>
+    <string name="home_repair">Home Repair</string>
+    <string name="transport">Transport</string>
+    <string name="vehicle_maintain">Vehicle Maintain</string>
+    <string name="education">Education</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="clothing">Clothing</string>
+    <string name="tobacco_alchohol">Tobacco / Alchohol</string>
+    <string name="healthcare">Health care</string>
+    <string name="sports_other">Sports / Other</string>
+    <string name="glossaries">Glossaries</string>
+    <string name="saloon_service">Saloon Service</string>
+    <string name="utility_bills">Utility Bills</string>
+    <string name="magazines">Magazines</string>
+    <string name="rent">Rent</string>
+    <string name="occasions">Occasioins</string>
+    <string name="property_tax">Property Tex</string>
+    <string name="donations">Donations</string>
+    <string name="vacation">Vacation</string>
+    <string name="vehicle_insurance">Vehicle Insurance</string>
+    <string name="loan_payment">Loan Payment</string>
+    <string name="insurance">Insurance</string>
+    <string name="Add">Add</string>
+    <string name="home1">Home</string>
+    <string name="individual1">Individual</string>
+    <string name="income">Income</string>
+    <string name="event1">Event</string>
+    <string name="budget_history1">Budget History</string>
+    <string name="todo">TODO</string>
+    <string name="todo01">TODO</string>
+    <string name="todo02">TODO</string>
+    <string name="history01">History</string>
+    <string name="todo001">TODO</string>
+    <string name="family">Family</string>
+    <string name="expenses">Expenses</string>
+    <string name="reminder">Reminder</string>
+    <string name="todo04">TODO</string>
+    <string name="todo5">TODO</string>
+    <string name="todo6">TODO</string>
+    <string name="todo20">TODO</string>
+    <string name="individual">Individual</string>
+    <string name="view_income">View Income</string>
+    <string name="add_budget">Add Budget</string>
+    <string name="add_expens">Add Expense</string>
+    <string name="view_expense">View expense</string>
+    <string name="ViewReminder">View Reminder</string>
+    <string name="AddReminder">Add Reminder</string>
+    <string name="notify">Notify</string>
+    <string name="TodoList">Todo List</string>
+    <string name="home01">Home</string>
+    <string name="expenses02">Expenses</string>
+    <string name="budget_history03">Budget History</string>
+    <string name="individual04">Individual</string>
+    <string name="history05">History</string>
+    <string name="reminder05">Reminder</string>
+    <string name="event06">Event</string>
+    <string name="income07">Income</string>
+    <string name="family08">Family</string>
+    <string name="save">Save</string>
+    <string name="Cancel">Cancel</string>
+
+    <string-array name="Individual_Items">
+        <item>Dummy 01</item>
+        <item>Dummy 02</item>
+        <item>Dummy 03</item>
+        <item>Dummy 04</item>
+        <item>Dummy 05</item>
+        <item>Dummy 06</item>
+        <item>Dummy 07</item>
+        <item>Dummy 08</item>
+        <item>Dummy 09</item>
+        <item>Dummy 10</item>
+
+    </string-array>
+
+    <string-array name="Individual_PriceList">
+        <item>Dummy Price 01</item>
+        <item>Dummy Price 02</item>
+        <item>Dummy Price 03</item>
+        <item>Dummy Price 04</item>
+        <item>Dummy Price 05</item>
+        <item>Dummy Price 06</item>
+        <item>Dummy Price 07</item>
+        <item>Dummy Price 08</item>
+        <item>Dummy Price 09</item>
+        <item>Dummy Price 10</item>
+
+    </string-array>
+
+    <string-array name="Family_Items">
+        <item>Dummy 01</item>
+        <item>Dummy 02</item>
+        <item>Dummy 03</item>
+        <item>Dummy 04</item>
+        <item>Dummy 05</item>
+        <item>Dummy 06</item>
+        <item>Dummy 07</item>
+        <item>Dummy 08</item>
+        <item>Dummy 09</item>
+        <item>Dummy 10</item>
+
+    </string-array>
+
+    <string-array name="Family_PriceList">
+        <item>Dummy Price 01</item>
+        <item>Dummy Price 02</item>
+        <item>Dummy Price 03</item>
+        <item>Dummy Price 04</item>
+        <item>Dummy Price 05</item>
+        <item>Dummy Price 06</item>
+        <item>Dummy Price 07</item>
+        <item>Dummy Price 08</item>
+        <item>Dummy Price 09</item>
+        <item>Dummy Price 10</item>
+
+    </string-array>
+
+    <string name="title_activity_event_tab">EventTab</string>
+    <string name="tab_text_1">Birth Day</string>
+    <string name="tab_text_2">Reunion</string>
+    <string name="tab_text_3">Farewell</string>
+    <string name="event01">Event</string>
+
+    <string name="EnterCrowd">Enter Crowd </string>
+    <string name="Refreshment">Refreshment</string>
+    <string name="decoration">Decoration</string>
+    <string name="Birthdaycake">Birthday Cake</string>
+    <string name="music">Music</string>
+    <string name="DancingGroup">Dancing Group</string>
+    <string name="photo">Photo / Video</string>
+    <string name="Equipment">Equipment Hire</string>
+    <string name="invitation">Invitations</string>
+    <string name="Other">Other</string>
+    <string name="cake">Cake</string>
+    <string name="incomeType">Income Type</string>
+    <string name="date">Date</string>
+    <string name="budget_history_price">Budget History Price</string>
+    <string name="budget_history_item">Budget History item</string>
+    <string name="budget_history_date">Budget History Date</string>
+    <string name="DElete">TODO</string>
+    <string name="Play">TODO</string>
+    <string name="view_income_price">View Income Price</string>
+    <string name="view_income_item">View Income Item</string>
+    <string name="ViewIncome_date">ViewIncome Date</string>
+    <string name="ViewIncome_item">ViewIncome Item</string>
+    <string name="reunion">Reunion</string>
+    <string name="birthday">Birthday</string>
+    <string name="farewell">Farewell</string>
+    <string name="view_expense_price">Expense Price</string>
+    <string name="ViewExpense_item">Expense Item</string>
+    <string name="ViewExpense_date">Expense date</string>
+    <string name="ExpenseType">Expense Type</string>
+    <string name="paymthd">Payment Method</string>
+
+
+    <string-array name="Event_Items">
+        <item>Dummy 01</item>
+        <item>Dummy 02</item>
+        <item>Dummy 03</item>
+        <item>Dummy 04</item>
+        <item>Dummy 05</item>
+        <item>Dummy 06</item>
+        <item>Dummy 07</item>
+        <item>Dummy 08</item>
+        <item>Dummy 09</item>
+        <item>Dummy 10</item>
+
+    </string-array>
+
+    <string-array name="Event_PriceList">
+        <item>Dummy Price 01</item>
+        <item>Dummy Price 02</item>
+        <item>Dummy Price 03</item>
+        <item>Dummy Price 04</item>
+        <item>Dummy Price 05</item>
+        <item>Dummy Price 06</item>
+        <item>Dummy Price 07</item>
+        <item>Dummy Price 08</item>
+        <item>Dummy Price 09</item>
+        <item>Dummy Price 10</item>
+
+    </string-array>
+
+    <string-array name="ViewIncome_Items">
+        <item>Dummy 01</item>
+        <item>Dummy 02</item>
+        <item>Dummy 03</item>
+        <item>Dummy 04</item>
+        <item>Dummy 05</item>
+        <item>Dummy 06</item>
+        <item>Dummy 07</item>
+        <item>Dummy 08</item>
+        <item>Dummy 09</item>
+        <item>Dummy 10</item>
+
+    </string-array>
+
+    <string-array name="ViewIncome_PriceList">
+        <item>Dummy Price 01</item>
+        <item>Dummy Price 02</item>
+        <item>Dummy Price 03</item>
+        <item>Dummy Price 04</item>
+        <item>Dummy Price 05</item>
+        <item>Dummy Price 06</item>
+        <item>Dummy Price 07</item>
+        <item>Dummy Price 08</item>
+        <item>Dummy Price 09</item>
+        <item>Dummy Price 10</item>
+
+    </string-array>
+
+    <string-array name="ViewIncome_Date">
+        <item>Dummy Date 01</item>
+        <item>Dummy Date 02</item>
+        <item>Dummy Date 03</item>
+        <item>Dummy Date 04</item>
+        <item>Dummy Date 05</item>
+        <item>Dummy Date 06</item>
+        <item>Dummy Date 07</item>
+        <item>Dummy Date 08</item>
+        <item>Dummy Date 09</item>
+        <item>Dummy Date 10</item>
+
+    </string-array>
+
+
+    <string-array name="ViewExpense_Items">
+        <item>Dummy 01</item>
+        <item>Dummy 02</item>
+        <item>Dummy 03</item>
+        <item>Dummy 04</item>
+        <item>Dummy 05</item>
+        <item>Dummy 06</item>
+        <item>Dummy 07</item>
+        <item>Dummy 08</item>
+        <item>Dummy 09</item>
+        <item>Dummy 10</item>
+
+    </string-array>
+
+    <string-array name="ViewExpense_PriceList">
+        <item>Dummy Price 01</item>
+        <item>Dummy Price 02</item>
+        <item>Dummy Price 03</item>
+        <item>Dummy Price 04</item>
+        <item>Dummy Price 05</item>
+        <item>Dummy Price 06</item>
+        <item>Dummy Price 07</item>
+        <item>Dummy Price 08</item>
+        <item>Dummy Price 09</item>
+        <item>Dummy Price 10</item>
+
+    </string-array>
+
+    <string-array name="ViewExpense_Date">
+        <item>Dummy Date 01</item>
+        <item>Dummy Date 02</item>
+        <item>Dummy Date 03</item>
+        <item>Dummy Date 04</item>
+        <item>Dummy Date 05</item>
+        <item>Dummy Date 06</item>
+        <item>Dummy Date 07</item>
+        <item>Dummy Date 08</item>
+        <item>Dummy Date 09</item>
+        <item>Dummy Date 10</item>
+
+    </string-array>
+
 </resources>

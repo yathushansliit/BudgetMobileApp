@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Reminder"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/todoList"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:background="@android:color/holo_orange_dark"
+        android:text="@string/TodoList"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/SysNotifi"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_orange_dark"
+        android:text="@string/notify"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/addReminder"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_orange_dark"
+        android:text="@string/AddReminder"
+        android:gravity="center"/>
+
+
+    <Button
+        android:id="@+id/ViewReminder"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_orange_dark"
+        android:text="@string/ViewReminder"
+        android:gravity="center"/>
+
+
+
+
+</LinearLayout>

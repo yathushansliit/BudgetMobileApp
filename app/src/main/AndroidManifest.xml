@@ -9,15 +9,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserVerify"></activity>
+        <activity android:name=".AddExpense"></activity>
+        <activity android:name=".viewExpense" />
+        <activity android:name=".AddtoBudgetExpense" />
+        <activity android:name=".View_Income" />
+        <activity
+            android:name=".BudgetHistory"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AddIncome" />
+        <activity android:name=".eventListView" />
+        <activity
+            android:name=".EventTab"
+            android:label="@string/title_activity_event_tab"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".familyListView" />
+        <activity android:name=".IndividualListView" />
+        <activity android:name=".Reminder" />
+        <activity android:name=".History" />
+        <activity android:name=".Expenses" />
+        <activity android:name=".Income" />
+        <activity android:name=".Family" />
+        <activity
+            android:name=".Home"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Individual1" />
+        <activity android:name=".UserVerify" />
         <activity android:name=".forgetUi" />
         <activity
             android:name=".Firstdisplay"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".NavigationViewDrawer"
-            android:label="@string/title_activity_navigation_view_drawer"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".LoginActivity" />
         <activity

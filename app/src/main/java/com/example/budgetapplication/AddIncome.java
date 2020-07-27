@@ -7,20 +7,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Individual1 extends AppCompatActivity {
+public class AddIncome extends AppCompatActivity {
 
-     Button button;
+    Button button;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_individual1);
+        setContentView(R.layout.activity_add_income);
 
-        button = findViewById(R.id.add);
+        button = findViewById(R.id.AddIncomeBtn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Individual1.this, IndividualListView.class);
+                Intent intent = new Intent(AddIncome.this, View_Income.class);
                 startActivity(intent);
             }
         });
