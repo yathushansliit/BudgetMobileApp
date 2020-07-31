@@ -5,8 +5,9 @@
     android:id="@+id/relativeLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context=".LoginActivity">
+    android:background="@drawable/signin_background"
+    tools:context=".LoginActivity"
+    >
 
     <ImageView
         android:id="@+id/imageView"
@@ -33,6 +34,8 @@
         android:layout_marginEnd="92dp"
         android:layout_marginBottom="386dp"
         android:autofillHints=""
+        android:textColor="#FAF9F9"
+        android:textColorHint="#FAF9F9"
         android:drawableStart="@drawable/ic_email_black_24dp"
         android:drawablePadding="5dp"
         android:ems="10"
@@ -52,6 +55,8 @@
         android:layout_marginEnd="88dp"
         android:layout_marginBottom="312dp"
         android:autofillHints=""
+        android:textColor="#FAF9F9"
+        android:textColorHint="#FAF9F9"
         android:drawableStart="@drawable/ic_lock_black_24dp"
         android:drawablePadding="5dp"
         android:ems="10"
@@ -70,7 +75,7 @@
         android:layout_marginTop="493dp"
         android:layout_marginEnd="165dp"
         android:layout_marginBottom="191dp"
-        android:background="@android:color/holo_orange_dark"
+        android:background="@drawable/my_button"
         android:text="@string/loginBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,6 +125,7 @@
         android:text="@string/remember_me"
         android:textColor="#FF9800"
         android:textStyle="bold"
+        android:buttonTint="#FAF9F9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
