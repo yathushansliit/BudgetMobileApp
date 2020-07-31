@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         mEmail= findViewById(R.id.userEmail);
         mPassword= findViewById(R.id.pwd);
-
+        fAuth=FirebaseAuth.getInstance();
         textView = (TextView) findViewById(R.id.Signup);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +81,8 @@ public class LoginActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),History.class) );
+                            Toast.makeText(LoginActivity.this,"Logged in Successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),Home.class));
                         }else{
                             Toast.makeText(LoginActivity.this, "Error !!" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

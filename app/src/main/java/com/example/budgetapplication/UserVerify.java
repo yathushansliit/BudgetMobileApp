@@ -26,3 +26,4 @@ public class UserVerify extends AppCompatActivity {
         });
     }
 }
+// Toast.makeText(SignupActivity.this, "User Created", Toast.LENGTH_SHORT).show();
