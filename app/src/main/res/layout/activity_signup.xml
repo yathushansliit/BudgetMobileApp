@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".SignupActivity"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:background="@drawable/signin_background">
 
     <ImageView
         android:id="@+id/imageView"
@@ -24,6 +25,8 @@
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:autofillHints=""
+        android:textColor="#FAF9F9"
+        android:textColorHint="#514A4A"
         android:drawableStart="@drawable/ic_account_box_black_24dp"
         android:ems="10"
         android:hint="@string/enter_user_name"
@@ -38,6 +41,7 @@
         android:drawableStart="@drawable/ic_phone_black_24dp"
         android:ems="10"
         android:hint="@string/enter_phoneNo"
+        android:textColorHint="#514A4A"
         android:textColor="#FF9800"
         android:inputType="phone" />
 
@@ -47,6 +51,8 @@
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:autofillHints=""
+        android:textColor="#FAF9F9"
+        android:textColorHint="#514A4A"
         android:drawableStart="@drawable/ic_email_black_24dp"
         android:drawablePadding="5dp"
         android:ems="10"
@@ -64,12 +70,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Single"
+            android:textColor="#FAF9F9"
+            android:buttonTint="#FAF9F9"
             />
 
         <RadioButton android:id="@+id/radio_married"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/married"
+            android:textColor="#FAF9F9"
+            android:buttonTint="#FAF9F9"
             android:layout_marginLeft="200dp"/>
     </RadioGroup>
 
@@ -79,6 +89,8 @@
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:autofillHints=""
+        android:textColor="#FAF9F9"
+        android:textColorHint="#514A4A"
         android:drawableStart="@drawable/ic_lock_black_24dp"
         android:drawablePadding="5dp"
         android:ems="10"
@@ -91,6 +103,8 @@
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:autofillHints=""
+        android:textColor="#FAF9F9"
+        android:textColorHint="#514A4A"
         android:drawableStart="@drawable/ic_lock_black_24dp"
         android:drawablePadding="5dp"
         android:ems="10"
@@ -99,10 +113,10 @@
 
     <Button
         android:id="@+id/nextBtn"
-        android:layout_width="100dp"
+        android:layout_width="121dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:background="@android:color/holo_orange_dark"
+        android:background="@drawable/my_button"
         android:text="Next" />
 
 <LinearLayout
