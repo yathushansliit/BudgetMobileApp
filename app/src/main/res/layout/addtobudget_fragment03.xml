@@ -1,30 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddIncome"
+
     android:gravity="center_horizontal"
     android:background="@drawable/signin_background">
 
 
-    <EditText
-        android:id="@+id/incomeType"
+    <Spinner
+        android:id="@+id/EventSpinner"
         android:layout_width="354dp"
         android:layout_height="40dp"
-        android:layout_marginTop="120dp"
-        android:autofillHints=""
+        android:layout_marginTop="30dp"
+        android:entries="@array/SpinnerEvent"
+        android:gravity="center_vertical"
+        android:paddingLeft="120dp"
+        android:background="@drawable/my_button01"/>
 
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/incomeType"
-        android:inputType="text"
-        android:textColor="@color/cardview_dark_background"
-        android:textColorHint="@color/cardview_dark_background"
-        android:background="@drawable/my_button01" />
 
     <EditText
         android:id="@+id/Amount"
@@ -33,12 +26,13 @@
         android:layout_marginTop="20dp"
         android:autofillHints=""
         android:ems="10"
-        android:gravity="center"
         android:hint="@string/amount"
         android:inputType="number"
+        android:gravity="center"
+        android:textSize="16dp"
         android:textColor="@color/cardview_dark_background"
         android:textColorHint="@color/cardview_dark_background"
-        android:background="@drawable/my_button01" />
+        android:background="@drawable/my_button01"/>
 
     <EditText
         android:id="@+id/date"
@@ -48,25 +42,25 @@
         android:autofillHints=""
         android:drawablePadding="5dp"
         android:ems="10"
-        android:gravity="center"
         android:hint="@string/date"
         android:inputType="date"
+        android:gravity="center"
+        android:textSize="16dp"
         android:textColor="@color/cardview_dark_background"
         android:textColorHint="@color/cardview_dark_background"
-        android:background="@drawable/my_button01" />
+        android:background="@drawable/my_button01"/>
+
+
 
 
 
     <Button
-        android:id="@+id/AddIncomeBtn"
+        android:id="@+id/AddExpenseBtn"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/my_button"
         android:text="Add" />
-
-
-
 
 
 

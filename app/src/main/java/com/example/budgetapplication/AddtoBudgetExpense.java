@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class AddtoBudgetExpense extends AppCompatActivity {
 
-    Button btn01,btn02,btn03,btn04,btn05;
+    Button btn01,btn02,btn03;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class AddtoBudgetExpense extends AppCompatActivity {
         btn01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddtoBudgetExpense.this, BudgetHistory.class);
+                Intent intent = new Intent(AddtoBudgetExpense.this, Individual1.class);
                 startActivity(intent);
             }
         });
@@ -31,36 +31,20 @@ public class AddtoBudgetExpense extends AppCompatActivity {
         btn02.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddtoBudgetExpense.this, BudgetHistory.class);
+                Intent intent = new Intent(AddtoBudgetExpense.this, Family.class);
                 startActivity(intent);
             }
         });
 
-        btn03 = findViewById(R.id.ReunionEx);
+        btn03 = findViewById(R.id.EventEx);
         btn03.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddtoBudgetExpense.this, BudgetHistory.class);
+                Intent intent = new Intent(AddtoBudgetExpense.this, EventTab.class);
                 startActivity(intent);
             }
         });
 
-        btn04 = findViewById(R.id.BirthdayEx);
-        btn04.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AddtoBudgetExpense.this, BudgetHistory.class);
-                startActivity(intent);
-            }
-        });
 
-        btn05 = findViewById(R.id.farewellEx);
-        btn05.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AddtoBudgetExpense.this, BudgetHistory.class);
-                startActivity(intent);
-            }
-        });
     }
 }

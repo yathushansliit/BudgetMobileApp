@@ -4,42 +4,43 @@
     android:layout_height="match_parent"
     tools:context=".Reminder"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@drawable/signin_background">
 
     <Button
         android:id="@+id/todoList"
-        android:layout_width="150dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
-        android:background="@android:color/holo_orange_dark"
+        android:background="@drawable/my_button"
         android:text="@string/TodoList"
         android:gravity="center"/>
 
     <Button
         android:id="@+id/SysNotifi"
-        android:layout_width="150dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@android:color/holo_orange_dark"
+        android:background="@drawable/my_button"
         android:text="@string/notify"
         android:gravity="center"/>
 
     <Button
         android:id="@+id/addReminder"
-        android:layout_width="150dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@android:color/holo_orange_dark"
+        android:background="@drawable/my_button"
         android:text="@string/AddReminder"
         android:gravity="center"/>
 
 
     <Button
         android:id="@+id/ViewReminder"
-        android:layout_width="150dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@android:color/holo_orange_dark"
+        android:background="@drawable/my_button"
         android:text="@string/ViewReminder"
         android:gravity="center"/>
 

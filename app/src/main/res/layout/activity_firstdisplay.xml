@@ -6,31 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".Firstdisplay"
     android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:background="@drawable/signin_background">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="100dp"
-        android:background="#FF9800"
+        android:background="@drawable/my_button"
         android:contentDescription="@string/logo"
         app:srcCompat="@drawable/logo" />
 
     <Button
         android:id="@+id/joinNow"
         android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="240dp"
-        android:background="@android:color/holo_orange_light"
+        android:background="@drawable/my_button01"
         android:text="@string/joinNow" />
 
     <Button
         android:id="@+id/loginBtnFirstDisplay"
         android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@android:color/holo_orange_dark"
+        android:background="@drawable/my_button"
         android:text="@string/log" />
 
 

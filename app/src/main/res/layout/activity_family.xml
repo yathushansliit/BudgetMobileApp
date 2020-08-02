@@ -5,7 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Family">
+    tools:context=".Family"
+    android:background="@drawable/signin_background">
 
 
     <LinearLayout
@@ -17,11 +18,13 @@
         android:id="@+id/Amount"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:gravity="center"
         android:hint="@string/EnterAmount"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textColor="#FAF9F9"
+        android:textColorHint="#514A4A"/>
 
 
     <LinearLayout
@@ -31,11 +34,13 @@
 
         <CheckBox
             android:id="@+id/checkBoxFood"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="60dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/food" />
+            android:text="@string/food"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9" />
 
         <CheckBox
             android:id="@+id/checkBoxHomeR"
@@ -43,8 +48,10 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="50dp"
-            android:text="@string/home_repair" />
+            android:layout_marginTop="60dp"
+            android:text="@string/home_repair"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
     </LinearLayout>
 
@@ -55,11 +62,13 @@
 
         <CheckBox
             android:id="@+id/checkBoxTransport"
-            android:layout_marginTop="85dp"
+            android:layout_marginTop="95dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/transport" />
+            android:text="@string/transport"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
         <CheckBox
             android:id="@+id/checkBoxVehicleM"
@@ -67,8 +76,10 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="85dp"
-            android:text="@string/vehicle_maintain" />
+            android:layout_marginTop="95dp"
+            android:text="@string/vehicle_maintain"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
     </LinearLayout>
 
@@ -79,19 +90,23 @@
 
         <CheckBox
             android:id="@+id/checkBoxEducation"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="130dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/education" />
+            android:text="@string/education"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
         <CheckBox
             android:id="@+id/checkBoxEntertainment"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
-            android:text="@string/entertainment" />
+            android:layout_marginTop="130dp"
+            android:text="@string/entertainment"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
     </LinearLayout>
 
@@ -102,19 +117,23 @@
 
         <CheckBox
             android:id="@+id/checkBoxClothing"
-            android:layout_marginTop="155dp"
+            android:layout_marginTop="165dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/clothing" />
+            android:text="@string/clothing"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
         <CheckBox
             android:id="@+id/checkBoxTobacco"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginTop="155dp"
-            android:text="@string/tobacco_alchohol" />
+            android:layout_marginTop="165dp"
+            android:text="@string/tobacco_alchohol"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
     </LinearLayout>
 
@@ -125,19 +144,23 @@
 
         <CheckBox
             android:id="@+id/checkBoxHealth"
-            android:layout_marginTop="190dp"
+            android:layout_marginTop="200dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/healthcare" />
+            android:text="@string/healthcare"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
         <CheckBox
             android:id="@+id/checkBoxSports"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginTop="190dp"
-            android:text="@string/sports_other" />
+            android:layout_marginTop="200dp"
+            android:text="@string/sports_other"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
     </LinearLayout>
 
@@ -148,19 +171,23 @@
 
         <CheckBox
             android:id="@+id/checkBoxGlossaries"
-            android:layout_marginTop="225dp"
+            android:layout_marginTop="235dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/glossaries" />
+            android:text="@string/glossaries"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
         <CheckBox
             android:id="@+id/checkBoxSaloonService"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginTop="225dp"
-            android:text="@string/saloon_service" />
+            android:layout_marginTop="235dp"
+            android:text="@string/saloon_service"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
     </LinearLayout>
 
@@ -171,19 +198,23 @@
 
         <CheckBox
             android:id="@+id/checkBoxUtility"
-            android:layout_marginTop="260dp"
+            android:layout_marginTop="270dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/utility_bills" />
+            android:text="@string/utility_bills"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
         <CheckBox
             android:id="@+id/checkBoxMagazines"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginTop="260dp"
-            android:text="@string/magazines" />
+            android:layout_marginTop="270dp"
+            android:text="@string/magazines"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
     </LinearLayout>
 
@@ -194,19 +225,23 @@
 
         <CheckBox
             android:id="@+id/checkBoxRent"
-            android:layout_marginTop="295dp"
+            android:layout_marginTop="305dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/rent" />
+            android:text="@string/rent"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
         <CheckBox
             android:id="@+id/checkBoxOccasions"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginTop="295dp"
-            android:text="@string/occasions" />
+            android:layout_marginTop="305dp"
+            android:text="@string/occasions"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
     </LinearLayout>
 
@@ -217,19 +252,23 @@
 
         <CheckBox
             android:id="@+id/checkBoxProperty"
-            android:layout_marginTop="330dp"
+            android:layout_marginTop="340dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/property_tax" />
+            android:text="@string/property_tax"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
         <CheckBox
             android:id="@+id/checkBoxDonations"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginTop="330dp"
-            android:text="@string/donations" />
+            android:layout_marginTop="340dp"
+            android:text="@string/donations"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
     </LinearLayout>
 
@@ -244,16 +283,20 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginTop="365dp"
-            android:text="@string/vacation" />
+            android:layout_marginTop="375dp"
+            android:text="@string/vacation"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
         <CheckBox
             android:id="@+id/checkBoxVehicleIn"
-            android:layout_marginTop="365dp"
+            android:layout_marginTop="375dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/vehicle_insurance" />
+            android:text="@string/vehicle_insurance"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
 
 
@@ -266,19 +309,23 @@
 
         <CheckBox
             android:id="@+id/checkBoxLoan"
-            android:layout_marginTop="400dp"
+            android:layout_marginTop="410dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/loan_payment" />
+            android:text="@string/loan_payment"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
         <CheckBox
             android:id="@+id/checkBoxInsurance"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginTop="400dp"
-            android:text="@string/insurance" />
+            android:layout_marginTop="410dp"
+            android:text="@string/insurance"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9"/>
 
 
     </LinearLayout>
@@ -286,16 +333,25 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:layout_marginTop="480dp"
+        android:gravity="center_horizontal">
 
         <Button
             android:id="@+id/addFamily"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="450dp"
-            android:layout_gravity="center_horizontal"
             android:text="@string/Add"
-            android:background="#FB8C00"/>
+            android:background="@drawable/my_button"
+            android:layout_marginRight="20dp"/>
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+
+            android:text="@string/Cancel"
+            android:background="@drawable/my_button01" />
 
     </LinearLayout>
 

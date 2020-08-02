@@ -29,7 +29,7 @@ public class Expenses extends AppCompatActivity {
         btn01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Expenses.this, AddExpense.class);
+                Intent intent = new Intent(Expenses.this, AddToBudgetTab.class);
                 startActivity(intent);
             }
         });

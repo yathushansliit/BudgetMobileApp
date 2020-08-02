@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#198AED"
+    android:background="@drawable/signin_background"
 
     tools:context=".Home">
 
@@ -18,7 +18,7 @@
     <TextView
         android:id="@+id/home"
         android:layout_width="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="@string/home"
@@ -29,7 +29,7 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="30dp"
         android:layout_below="@+id/home"
         android:rowCount="4"
         android:columnCount="2"
@@ -47,7 +47,8 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#FF9800">
 
             <LinearLayout
                 android:layout_width="100dp"
@@ -59,13 +60,14 @@
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/friends" />
+                    android:src="@drawable/single" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/individual"
                     android:textStyle="bold"
+                    android:textColor="#000000"
                     android:textSize="18sp"
                     android:textAlignment="center"/>
 
@@ -83,7 +85,8 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#FF9800">
 
             <LinearLayout
                 android:layout_width="100dp"
@@ -95,7 +98,7 @@
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/friends"/>
+                    android:src="@drawable/family"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -103,6 +106,7 @@
                     android:text="@string/family"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="#000000"
                     android:textAlignment="center"/>
 
             </LinearLayout>
@@ -120,7 +124,8 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#FF9800">
 
             <LinearLayout
                 android:layout_width="100dp"
@@ -132,7 +137,7 @@
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/friends"/>
+                    android:src="@drawable/expense"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -140,6 +145,7 @@
                     android:text="@string/expenses"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="#000000"
                     android:textAlignment="center"/>
 
             </LinearLayout>
@@ -157,7 +163,8 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#FF9800">
 
             <LinearLayout
                 android:layout_width="100dp"
@@ -169,7 +176,7 @@
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/friends"/>
+                    android:src="@drawable/income"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -177,47 +184,13 @@
                     android:text="@string/income"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="#000000"
                     android:textAlignment="center"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/HistoryCard"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_row="2"
-            android:layout_column="0"
-            android:layout_gravity="fill"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
-
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_gravity="center_vertical|center_horizontal">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/friends"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/history"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:textAlignment="center"/>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
 
 
         <androidx.cardview.widget.CardView
@@ -231,7 +204,8 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#FF9800">
 
             <LinearLayout
                 android:layout_width="100dp"
@@ -243,7 +217,7 @@
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/friends"/>
+                    android:src="@drawable/event"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -251,6 +225,7 @@
                     android:text="@string/event"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="#000000"
                     android:textAlignment="center"/>
 
             </LinearLayout>
@@ -268,7 +243,8 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#FF9800">
 
             <LinearLayout
                 android:layout_width="100dp"
@@ -280,7 +256,7 @@
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/friends"/>
+                    android:src="@drawable/budgethistory"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -288,6 +264,7 @@
                     android:text="@string/budget_history"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="#000000"
                     android:textAlignment="center"/>
 
             </LinearLayout>
@@ -298,14 +275,15 @@
             android:id="@+id/reminderCard"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_row="3"
-            android:layout_column="1"
+            android:layout_row="2"
+            android:layout_column="0"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#FF9800">
 
             <LinearLayout
                 android:layout_width="100dp"
@@ -317,7 +295,7 @@
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/friends"/>
+                    android:src="@drawable/reminder"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -325,10 +303,52 @@
                     android:text="@string/reminder"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:textAlignment="center"/>
+
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/LogoutCard"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#FF9800">
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_gravity="center_vertical|center_horizontal">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/logout"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/logOut"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
                     android:textAlignment="center"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
 
 
 

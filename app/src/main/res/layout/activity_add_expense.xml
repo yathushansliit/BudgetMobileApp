@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".AddExpense"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:background="@drawable/signin_background">
 
     <ImageView
         android:id="@+id/imageView"
@@ -20,7 +21,7 @@
 
     <EditText
         android:id="@+id/expenseType"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
         android:autofillHints=""
@@ -28,7 +29,9 @@
         android:ems="10"
         android:hint="@string/ExpenseType"
         android:inputType="text"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textColor="#FAF9F9"
+        android:textColorHint="#514A4A"/>
 
     <EditText
         android:id="@+id/Amount"
@@ -39,7 +42,9 @@
         android:ems="10"
         android:hint="@string/amount"
         android:inputType="number"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textColor="#FAF9F9"
+        android:textColorHint="#514A4A"/>
 
     <EditText
         android:id="@+id/date"
@@ -51,7 +56,9 @@
         android:ems="10"
         android:hint="@string/date"
         android:inputType="date"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textColor="#FAF9F9"
+        android:textColorHint="#514A4A"/>
 
     <EditText
         android:id="@+id/paymentMthd"
@@ -63,7 +70,9 @@
         android:ems="10"
         android:hint="@string/paymthd"
         android:inputType="date"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textColor="#FAF9F9"
+        android:textColorHint="#514A4A"/>
 
 
 
@@ -72,7 +81,7 @@
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginTop="30dp"
-        android:background="@android:color/holo_orange_dark"
+        android:background="@drawable/my_button"
         android:text="Add" />
 
 

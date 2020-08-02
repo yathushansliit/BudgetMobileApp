@@ -4,42 +4,77 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/my_button"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddExpense"></activity>
-        <activity android:name=".viewExpense" />
-        <activity android:name=".AddtoBudgetExpense" />
-        <activity android:name=".View_Income" />
+        <activity
+            android:name=".AddToBudgetTab"
+            android:label="@string/title_activity_add_to_budget_tab"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".AddExpense"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".viewExpense"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".AddtoBudgetExpense"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".View_Income"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".BudgetHistory"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddIncome" />
-        <activity android:name=".eventListView" />
+        <activity android:name=".AddIncome"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".eventListView"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".EventTab"
             android:label="@string/title_activity_event_tab"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".familyListView" />
-        <activity android:name=".IndividualListView" />
-        <activity android:name=".Reminder" />
-        <activity android:name=".History" />
-        <activity android:name=".Expenses" />
-        <activity android:name=".Income" />
-        <activity android:name=".Family" />
+        <activity
+            android:name=".familyListView"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".IndividualListView"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Reminder"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".History"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Expenses"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Income"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Family"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Home"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".Individual1" />
-        <activity android:name=".UserVerify" />
-        <activity android:name=".forgetUi" />
+        <activity
+            android:name=".Individual1"
+            android:label="@string/title_activity_Individual"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".UserVerify"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".forgetUi"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Firstdisplay"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity
+            android:name=".SignupActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

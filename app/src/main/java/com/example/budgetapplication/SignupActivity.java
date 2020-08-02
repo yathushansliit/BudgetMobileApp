@@ -101,8 +101,8 @@ public class SignupActivity extends AppCompatActivity {
                             composeEmail(email,"Email verfification for budget friend");
 
                             // Navigate to User Verification
-                            Intent intentVeri = new Intent(SignupActivity.this,UserVerify.class);
-                            startActivity(intentVeri);
+                           // Intent intentVeri = new Intent(SignupActivity.this,UserVerify.class);
+                            //startActivity(intentVeri);
                         } else{
                             Toast.makeText(SignupActivity.this, "Error !!" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

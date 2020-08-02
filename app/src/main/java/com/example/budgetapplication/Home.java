@@ -24,7 +24,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         cardView02 = (CardView) findViewById(R.id.familyCard);
         cardView03 = (CardView) findViewById(R.id.ExpensesCard);
         cardView04 = (CardView) findViewById(R.id.incomeCard);
-        cardView05 = (CardView) findViewById(R.id.HistoryCard);
+        cardView05 = (CardView) findViewById(R.id.LogoutCard);
         cardView06 = (CardView) findViewById(R.id.eventCard);
         cardView07 = (CardView) findViewById(R.id.BudgetHistoryCard);
         cardView08 = (CardView) findViewById(R.id.reminderCard);
@@ -52,7 +52,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
             case R.id.familyCard: intent = new Intent(this,Family.class); startActivity(intent); break;
             case R.id.ExpensesCard: intent = new Intent(this,Expenses.class); startActivity(intent);  break;
             case R.id.incomeCard: intent = new Intent(this,Income.class); startActivity(intent); break;
-            case R.id.HistoryCard: intent = new Intent(this,History.class); startActivity(intent); break;
+            case R.id.LogoutCard: intent = new Intent(this,Firstdisplay.class); startActivity(intent); break;
             case R.id.eventCard: intent = new Intent(this,EventTab.class); startActivity(intent); break;
             case R.id.BudgetHistoryCard: intent = new Intent(this,BudgetHistory.class); startActivity(intent); break;
             case R.id.reminderCard: intent = new Intent(this,Reminder.class); startActivity(intent); break;
