@@ -6,19 +6,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.budgetapplication.ExpenseModels.FamilyExpense;
+import com.example.budgetapplication.ExpenseModels.IndividualExpense;
+
+import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class FamilyAdapter extends RecyclerView.Adapter<FamilyAdapter.MyViewHolder>{
-    String data1[], data2[];
+
     Context context;
+    private List<FamilyExpense> familyExpenseList;
 
-    public  FamilyAdapter(Context ct,String s1[], String s2[]){
-        context = ct;
-        data1 = s1;
-        data2 = s2;
-
+    public FamilyAdapter(Context context, List<FamilyExpense> familyExpenseList) {
+        this.context = context;
+        this.familyExpenseList = familyExpenseList;
     }
+
+
 
     @NonNull
     @Override
@@ -30,13 +36,14 @@ public class FamilyAdapter extends RecyclerView.Adapter<FamilyAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.FamilyItem01.setText(data1[position]);
-        holder.FamilyPrice01.setText(data2[position]);
+        FamilyExpense familyExpense = familyExpenseList.get(position);
+        holder.FamilyItem01.setText(familyExpense.getFamilyExpenseName());
+        holder.FamilyPrice01.setText(familyExpense.getFamilyExpenseAmount());
     }
 
     @Override
     public int getItemCount() {
-        return data1.length;
+        return familyExpenseList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

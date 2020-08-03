@@ -6,19 +6,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.budgetapplication.ExpenseModels.IndividualExpense;
+
+import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class IndividualAdapter extends RecyclerView.Adapter<IndividualAdapter.MyViewHolder> {
 
-    String data1[], data2[];
     Context context;
+    private List<IndividualExpense> individualExpenseList;
 
-    public  IndividualAdapter(Context ct,String s1[], String s2[]){
+    public  IndividualAdapter(Context ct,List<IndividualExpense> individualExpenseList){
         context = ct;
-        data1 = s1;
-        data2 = s2;
-
+        this.individualExpenseList = individualExpenseList;
     }
 
     @NonNull
@@ -31,24 +33,24 @@ public class IndividualAdapter extends RecyclerView.Adapter<IndividualAdapter.My
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-       holder.IndividualItem01.setText(data1[position]);
-        holder.IndividualPrice01.setText(data2[position]);
+        IndividualExpense individualExpense = individualExpenseList.get(position);
+        holder.IndividualExpenseName.setText(individualExpense.getIndividualExpenseName());
+        holder.IndividualExpenseAmount.setText(individualExpense.getIndividualExpenseAmount());
     }
 
     @Override
     public int getItemCount() {
-        return data1.length;
+        return individualExpenseList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView IndividualItem01, IndividualPrice01;
-
+        TextView IndividualExpenseName, IndividualExpenseAmount;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            IndividualItem01 = itemView.findViewById(R.id.IndividualItem01);
-            IndividualPrice01 = itemView.findViewById(R.id.IndividualPrice01);
+            IndividualExpenseName = itemView.findViewById(R.id.IndividualItem01);
+            IndividualExpenseAmount = itemView.findViewById(R.id.IndividualPrice01);
         }
     }
 }

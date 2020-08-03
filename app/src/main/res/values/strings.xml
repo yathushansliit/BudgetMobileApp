@@ -111,7 +111,7 @@
     <string name="todo5">TODO</string>
     <string name="todo6">TODO</string>
     <string name="todo20">TODO</string>
-    <string name="individual">Individual</string>
+    <string name="individualExpense">Individual</string>
     <string name="view_income">View Income</string>
     <string name="add_budget">Add Budget</string>
     <string name="add_expens">Add Expense</string>
@@ -363,7 +363,7 @@
         <item>Loan Payment</item>
         <item>Home Repair</item>
         <item>Vehicle Maintenance</item>
-        <item>Entertaintment</item>
+        <item>Entertainment</item>
         <item>Alchohol / Tobacco</item>
         <item>Sports</item>
         <item>Saloon Service</item>

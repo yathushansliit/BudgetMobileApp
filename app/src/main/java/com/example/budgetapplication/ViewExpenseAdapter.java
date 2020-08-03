@@ -35,9 +35,9 @@ public class ViewExpenseAdapter extends RecyclerView.Adapter<ViewExpenseAdapter.
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-      holder.textView1.setText(data1[position]);
-        holder.textView2.setText(data2[position]);
-        holder.textView3.setText(data3[position]);
+//      holder.textView1.setText(data1[position]);
+//        holder.textView2.setText(data2[position]);
+//        holder.textView3.setText(data3[position]);
 
     }
 
@@ -48,14 +48,15 @@ public class ViewExpenseAdapter extends RecyclerView.Adapter<ViewExpenseAdapter.
 
     public class MyViewHolder extends  RecyclerView.ViewHolder {
 
-      TextView textView1,textView2,textView3;
+      TextView expenseName,expenseAmount,expenseDate,expenseType;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textView1 = itemView.findViewById(R.id.ViewExpenseItem01);
-            textView2 = itemView.findViewById(R.id.ViewExpensePrice01);
-            textView3 = itemView.findViewById(R.id.ViewExpenseDate01);
+            expenseName = itemView.findViewById(R.id.ViewExpenseItem01);
+            expenseAmount = itemView.findViewById(R.id.ViewExpensePrice01);
+            expenseDate = itemView.findViewById(R.id.ViewExpenseDate01);
+            expenseType = itemView.findViewById(R.id.ViewBudgetType01);
 
         }
     }
