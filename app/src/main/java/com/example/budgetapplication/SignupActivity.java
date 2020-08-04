@@ -15,9 +15,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -61,11 +64,12 @@ public class SignupActivity extends AppCompatActivity {
         mSignUpBtn.setOnClickListener(new View.OnClickListener(){
 
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
                 final String email =mEmail.getText().toString().trim();
                 String pwd =mPassword.getText().toString().trim();
                 String repwd=mRePassword.getText().toString().trim();
                 String username=mUsername.getText().toString().trim();
+                String mobNo=mPhoneNo.getText().toString();
                 final Intent intent= new Intent(Intent.ACTION_SEND);;
 
                 if (TextUtils.isEmpty(email)){
@@ -84,6 +88,10 @@ public class SignupActivity extends AppCompatActivity {
                     mUsername.setError("Username is required.");
                     return;
                 }
+                if((mobNo.length()<10)||((mobNo.length()>10))){
+                    mPhoneNo .setError("InValid Mobile Number");
+                    return;
+                }
                 if (pwd.length()<6){
                     mPassword.setError("Password must be greater or equal to 6 characters");
                     return;
@@ -92,38 +100,42 @@ public class SignupActivity extends AppCompatActivity {
                     mRePassword.setError("Mis Matching");
                     return;
                 }
-
+             /*   user.sendEmailVerification()
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Log.d(TAG, "Email sent.");
+                                }
+                            }
+                        }); */
                 //Firebase
                 fAuth.createUserWithEmailAndPassword(email,pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            composeEmail(email,"Email verfification for budget friend");
-
-                            // Navigate to User Verification
-                           // Intent intentVeri = new Intent(SignupActivity.this,UserVerify.class);
-                            //startActivity(intentVeri);
+                            //Email Verification
+                            fAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()){
+                                        Toast.makeText(SignupActivity.this,"User Created! Please Check Your Email for verification",Toast.LENGTH_LONG).show();
+                                        Intent intentVeri = new Intent(SignupActivity.this,LoginActivity.class);
+                                        startActivity(intentVeri);
+                                        ((EditText)v).setText("");
+                                    }else{
+                                        Toast.makeText(SignupActivity.this, "Error !!" +task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            });
                         } else{
-                            Toast.makeText(SignupActivity.this, "Error !!" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignupActivity.this, "Error !!" +task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
 
-                    public void composeEmail(String addresses, String subject) {
-                        Intent intent = new Intent(Intent.ACTION_SEND);
-                        intent.setType("*/*");
-                        intent.putExtra(Intent.EXTRA_EMAIL, addresses);
-                        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-                        //intent.putExtra(Intent.EXTRA_STREAM, attachment);
-                        if (intent.resolveActivity(getPackageManager()) != null) {
-                            startActivity(intent);
-                        }
-                    }
+
                 });
-
-
             }
         });
-
-
     }
 }
