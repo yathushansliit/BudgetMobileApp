@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.budgetapplication.ExpenseModels.IndividualExpense;
+import com.example.budgetapplication.Models.IndividualExpenseModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,7 +22,7 @@ import java.util.List;
 public class IndividualListView extends AppCompatActivity {
     private RecyclerView recyclerView;
     private IndividualAdapter individualAdapter;
-    private List<IndividualExpense> individualExpenseList;
+    private List<IndividualExpenseModel> individualExpenseModelList;
     private ArrayList<String> selectedItemsList;
     Integer amount =0;
 
@@ -41,7 +41,7 @@ public class IndividualListView extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerIndividual);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        individualExpenseList = new ArrayList<>();
+        individualExpenseModelList = new ArrayList<>();
 
         databaseReference = FirebaseDatabase.getInstance().getReference("individual");
       //  databaseReference.addListenerForSingleValueEvent(valueEventListener);
@@ -180,7 +180,7 @@ public class IndividualListView extends AppCompatActivity {
             query22.addListenerForSingleValueEvent(valueEventListener);
         }
 
-        individualAdapter = new IndividualAdapter(this, individualExpenseList);
+        individualAdapter = new IndividualAdapter(this, individualExpenseModelList);
         recyclerView.setAdapter(individualAdapter);
 
     }
@@ -192,13 +192,13 @@ public class IndividualListView extends AppCompatActivity {
             //individualExpenseList.clear();
             if (dataSnapshot.exists()  ) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    IndividualExpense individualExpense = snapshot.getValue(IndividualExpense.class);
+                    IndividualExpenseModel individualExpenseModel = snapshot.getValue(IndividualExpenseModel.class);
 
-                    individualExpenseList.add(individualExpense);
-                    amount = amount + Integer.parseInt(individualExpense.getIndividualExpenseAmount());
+                    individualExpenseModelList.add(individualExpenseModel);
+                    amount = amount + Integer.parseInt(individualExpenseModel.getIndividualExpenseAmount());
                 }
                 individualAdapter.notifyDataSetChanged();
-                Log.d("List", String.valueOf(individualExpenseList));
+                Log.d("List", String.valueOf(individualExpenseModelList));
             }
         }
 

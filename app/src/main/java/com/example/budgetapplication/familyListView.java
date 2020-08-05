@@ -5,11 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
-import com.example.budgetapplication.ExpenseModels.FamilyExpense;
-import com.example.budgetapplication.ExpenseModels.IndividualExpense;
+import com.example.budgetapplication.Models.FamilyExpenseModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,7 +22,7 @@ public class familyListView extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private FamilyAdapter familyAdapter;
-    private List<FamilyExpense> familyExpenseList;
+    private List<FamilyExpenseModel> familyExpenseModelList;
     private ArrayList<String> selectedFamilyItemsList;
     Integer amount =0;
 
@@ -43,7 +41,7 @@ public class familyListView extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerFamily);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        familyExpenseList = new ArrayList<>();
+        familyExpenseModelList = new ArrayList<>();
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Family");
 
@@ -182,7 +180,7 @@ public class familyListView extends AppCompatActivity {
         }
 
 
-        familyAdapter = new FamilyAdapter(this, familyExpenseList);
+        familyAdapter = new FamilyAdapter(this, familyExpenseModelList);
         recyclerView.setAdapter(familyAdapter);
 
     }
@@ -193,10 +191,10 @@ public class familyListView extends AppCompatActivity {
             //familyExpenseList.clear();
             if (dataSnapshot.exists()  ) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    FamilyExpense familyExpense = snapshot.getValue(FamilyExpense.class);
+                    FamilyExpenseModel familyExpenseModel = snapshot.getValue(FamilyExpenseModel.class);
 
-                    familyExpenseList.add(familyExpense);
-                   amount = amount + Integer.parseInt(familyExpense.getFamilyExpenseAmount());
+                    familyExpenseModelList.add(familyExpenseModel);
+                   amount = amount + Integer.parseInt(familyExpenseModel.getFamilyExpenseAmount());
 
                 }
                 familyAdapter.notifyDataSetChanged();

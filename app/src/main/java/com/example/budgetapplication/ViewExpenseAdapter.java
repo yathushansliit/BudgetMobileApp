@@ -15,13 +15,7 @@ public class ViewExpenseAdapter extends RecyclerView.Adapter<ViewExpenseAdapter.
      Context context;
 
 
-  public ViewExpenseAdapter(Context ct, String s1[], String s2[], String s3[]){
-      context = ct;
-      data1 = s1;
-      data2 = s2;
-      data3 = s3;
 
-  }
 
 
     @NonNull
@@ -34,11 +28,6 @@ public class ViewExpenseAdapter extends RecyclerView.Adapter<ViewExpenseAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
-//      holder.textView1.setText(data1[position]);
-//        holder.textView2.setText(data2[position]);
-//        holder.textView3.setText(data3[position]);
-
     }
 
     @Override

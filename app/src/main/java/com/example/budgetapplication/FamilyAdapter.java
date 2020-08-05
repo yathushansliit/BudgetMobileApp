@@ -6,8 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.budgetapplication.ExpenseModels.FamilyExpense;
-import com.example.budgetapplication.ExpenseModels.IndividualExpense;
+import com.example.budgetapplication.Models.FamilyExpenseModel;
 
 import java.util.List;
 
@@ -17,11 +16,11 @@ import androidx.recyclerview.widget.RecyclerView;
 public class FamilyAdapter extends RecyclerView.Adapter<FamilyAdapter.MyViewHolder>{
 
     Context context;
-    private List<FamilyExpense> familyExpenseList;
+    private List<FamilyExpenseModel> familyExpenseModelList;
 
-    public FamilyAdapter(Context context, List<FamilyExpense> familyExpenseList) {
+    public FamilyAdapter(Context context, List<FamilyExpenseModel> familyExpenseModelList) {
         this.context = context;
-        this.familyExpenseList = familyExpenseList;
+        this.familyExpenseModelList = familyExpenseModelList;
     }
 
 
@@ -36,14 +35,14 @@ public class FamilyAdapter extends RecyclerView.Adapter<FamilyAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        FamilyExpense familyExpense = familyExpenseList.get(position);
-        holder.FamilyItem01.setText(familyExpense.getFamilyExpenseName());
-        holder.FamilyPrice01.setText(familyExpense.getFamilyExpenseAmount());
+        FamilyExpenseModel familyExpenseModel = familyExpenseModelList.get(position);
+        holder.FamilyItem01.setText(familyExpenseModel.getFamilyExpenseName());
+        holder.FamilyPrice01.setText(familyExpenseModel.getFamilyExpenseAmount());
     }
 
     @Override
     public int getItemCount() {
-        return familyExpenseList.size();
+        return familyExpenseModelList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

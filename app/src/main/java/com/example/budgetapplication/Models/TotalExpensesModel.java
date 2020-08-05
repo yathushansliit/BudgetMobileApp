@@ -1,20 +1,27 @@
-package com.example.budgetapplication.ExpenseModels;
+package com.example.budgetapplication.Models;
 
-public class TotalExpenses {
+public class TotalExpensesModel {
     String expenseId;
     String expenseName;
     String expenseAmount;
     String expenseDate;
     String expenseType;
 
-    public TotalExpenses(){}
+    public TotalExpensesModel(){}
 
-    public TotalExpenses(String expenseId, String expenseName, String expenseAmount, String expenseDate, String expenseType) {
+    public TotalExpensesModel(String expenseId, String expenseName, String expenseAmount, String expenseDate, String expenseType) {
         this.expenseId = expenseId;
         this.expenseName = expenseName;
         this.expenseAmount = expenseAmount;
         this.expenseDate = expenseDate;
         this.expenseType = expenseType;
+    }
+    public TotalExpensesModel(String expenseId, String expenseName, String expenseAmount, String expenseDate) {
+        this.expenseId = expenseId;
+        this.expenseName = expenseName;
+        this.expenseAmount = expenseAmount;
+        this.expenseDate = expenseDate;
+
     }
 
     public String getExpenseId() {

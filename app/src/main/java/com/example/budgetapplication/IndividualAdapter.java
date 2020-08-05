@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.budgetapplication.ExpenseModels.IndividualExpense;
+import com.example.budgetapplication.Models.IndividualExpenseModel;
 
 import java.util.List;
 
@@ -16,11 +16,11 @@ import androidx.recyclerview.widget.RecyclerView;
 public class IndividualAdapter extends RecyclerView.Adapter<IndividualAdapter.MyViewHolder> {
 
     Context context;
-    private List<IndividualExpense> individualExpenseList;
+    private List<IndividualExpenseModel> individualExpenseModelList;
 
-    public  IndividualAdapter(Context ct,List<IndividualExpense> individualExpenseList){
+    public  IndividualAdapter(Context ct,List<IndividualExpenseModel> individualExpenseModelList){
         context = ct;
-        this.individualExpenseList = individualExpenseList;
+        this.individualExpenseModelList = individualExpenseModelList;
     }
 
     @NonNull
@@ -33,14 +33,14 @@ public class IndividualAdapter extends RecyclerView.Adapter<IndividualAdapter.My
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        IndividualExpense individualExpense = individualExpenseList.get(position);
-        holder.IndividualExpenseName.setText(individualExpense.getIndividualExpenseName());
-        holder.IndividualExpenseAmount.setText(individualExpense.getIndividualExpenseAmount());
+        IndividualExpenseModel individualExpenseModel = individualExpenseModelList.get(position);
+        holder.IndividualExpenseName.setText(individualExpenseModel.getIndividualExpenseName());
+        holder.IndividualExpenseAmount.setText(individualExpenseModel.getIndividualExpenseAmount());
     }
 
     @Override
     public int getItemCount() {
-        return individualExpenseList.size();
+        return individualExpenseModelList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

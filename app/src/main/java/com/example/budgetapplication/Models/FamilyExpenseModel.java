@@ -1,17 +1,17 @@
-package com.example.budgetapplication.ExpenseModels;
+package com.example.budgetapplication.Models;
 
-public class FamilyExpense {
+public class FamilyExpenseModel {
     String familyExpenseId;
     String familyExpenseName;
     String familyExpenseAmount;
     String familyExpenseDate;
     String expenseType;
 
-    public FamilyExpense(){
+    public FamilyExpenseModel(){
 
     }
 
-    public FamilyExpense(String familyExpenseId, String familyExpenseName, String familyExpenseAmount, String familyExpenseDate, String expenseType) {
+    public FamilyExpenseModel(String familyExpenseId, String familyExpenseName, String familyExpenseAmount, String familyExpenseDate, String expenseType) {
         this.familyExpenseId = familyExpenseId;
         this.familyExpenseName = familyExpenseName;
         this.familyExpenseAmount = familyExpenseAmount;

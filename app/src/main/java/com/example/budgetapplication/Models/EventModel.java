@@ -1,17 +1,17 @@
-package com.example.budgetapplication.ExpenseModels;
+package com.example.budgetapplication.Models;
 
-public class Event {
+public class EventModel {
     String eventExpenseId;
     String eventExpenseName;
     String eventExpenseAmount;
     String eventExpenseDate;
     String expenseType;
 
-    public Event(){
+    public EventModel(){
 
     }
 
-    public Event(String eventExpenseId, String eventExpenseName, String eventExpenseAmount, String eventExpenseDate, String expenseType) {
+    public EventModel(String eventExpenseId, String eventExpenseName, String eventExpenseAmount, String eventExpenseDate, String expenseType) {
         this.eventExpenseId = eventExpenseId;
         this.eventExpenseName = eventExpenseName;
         this.eventExpenseAmount = eventExpenseAmount;

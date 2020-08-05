@@ -122,7 +122,11 @@ public class SignupActivity extends AppCompatActivity {
                                         Toast.makeText(SignupActivity.this,"User Created! Please Check Your Email for verification",Toast.LENGTH_LONG).show();
                                         Intent intentVeri = new Intent(SignupActivity.this,LoginActivity.class);
                                         startActivity(intentVeri);
-                                        ((EditText)v).setText("");
+                                        mPassword.getText().clear();
+                                        mEmail.getText().clear();
+                                        mRePassword.getText().clear();
+                                        mPhoneNo.getText().clear();
+                                        mUsername.getText().clear();
                                     }else{
                                         Toast.makeText(SignupActivity.this, "Error !!" +task.getException().getMessage(), Toast.LENGTH_LONG).show();
                                     }

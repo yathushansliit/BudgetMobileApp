@@ -111,7 +111,7 @@
     <string name="todo5">TODO</string>
     <string name="todo6">TODO</string>
     <string name="todo20">TODO</string>
-    <string name="individualExpense">Individual</string>
+    <string name="individualExpenseModel">Individual</string>
     <string name="view_income">View Income</string>
     <string name="add_budget">Add Budget</string>
     <string name="add_expens">Add Expense</string>
@@ -131,6 +131,58 @@
     <string name="family08">Family</string>
     <string name="save">Save</string>
     <string name="Cancel">Cancel</string>
+
+    <string name="title_activity_event_tab">EventTab</string>
+
+    <string name="tab_text_1">Birth Day</string>
+
+    <string name="tab_text_2">Reunion</string>
+
+    <string name="tab_text_3">Farewell</string>
+
+    <string name="event01">Event</string>
+    <string name="EnterCrowd">Enter Crowd </string>
+    <string name="Refreshment">Refreshment</string>
+    <string name="decoration">Decoration</string>
+    <string name="Birthdaycake">Birthday Cake</string>
+
+    <string name="music">Music</string>
+    <string name="DancingGroup">Dancing Group</string>
+    <string name="photo">Photo / Video</string>
+    <string name="Equipment">Equipment Hire</string>
+    <string name="invitation">Invitations</string>
+    <string name="Other">Other</string>
+    <string name="cake">Cake</string>
+    <string name="incomeType">Income Type</string>
+    <string name="date">Date</string>
+    <string name="budget_history_price">Budget History Price</string>
+    <string name="budget_history_item">Budget History item</string>
+    <string name="budget_history_date">Budget History Date</string>
+    <string name="DElete">TODO</string>
+    <string name="Play">TODO</string>
+    <string name="view_income_price">View Income Price</string>
+    <string name="view_income_item">View Income Item</string>
+    <string name="ViewIncome_date">ViewIncome Date</string>
+    <string name="ViewIncome_item">ViewIncome Item</string>
+    <string name="reunion">Reunion</string>
+    <string name="birthday">Birthday</string>
+    <string name="farewell">Farewell</string>
+    <string name="view_expense_price">Expense Price</string>
+    <string name="ViewExpense_item">Expense Item</string>
+    <string name="ViewExpense_date">Expense date</string>
+    <string name="ExpenseType">Expense Type</string>
+    <string name="paymthd">Payment Method</string>
+    <string name="logOut">Log Out</string>
+    <string name="title_activity_Individual">Individual</string>
+    <string name="title_activity_add_to_budget">AddToBudget</string>
+    <string name="title_activity_add_to_budget_tab">Add To BudgetTab</string>
+    <string name="tab_text_4">Individual</string>
+    <string name="tab_text_5">Family</string>
+
+
+    <string name="tab_text_6">Event</string>
+
+    <string name="budgettype">budgetType</string>
 
     <string-array name="Individual_Items">
         <item>Dummy 01</item>
@@ -174,6 +226,7 @@
 
     </string-array>
 
+
     <string-array name="Family_PriceList">
         <item>Dummy Price 01</item>
         <item>Dummy Price 02</item>
@@ -187,46 +240,6 @@
         <item>Dummy Price 10</item>
 
     </string-array>
-
-    <string name="title_activity_event_tab">EventTab</string>
-    <string name="tab_text_1">Birth Day</string>
-    <string name="tab_text_2">Reunion</string>
-    <string name="tab_text_3">Farewell</string>
-    <string name="event01">Event</string>
-
-    <string name="EnterCrowd">Enter Crowd </string>
-    <string name="Refreshment">Refreshment</string>
-    <string name="decoration">Decoration</string>
-    <string name="Birthdaycake">Birthday Cake</string>
-    <string name="music">Music</string>
-    <string name="DancingGroup">Dancing Group</string>
-    <string name="photo">Photo / Video</string>
-    <string name="Equipment">Equipment Hire</string>
-    <string name="invitation">Invitations</string>
-    <string name="Other">Other</string>
-    <string name="cake">Cake</string>
-    <string name="incomeType">Income Type</string>
-    <string name="date">Date</string>
-    <string name="budget_history_price">Budget History Price</string>
-    <string name="budget_history_item">Budget History item</string>
-    <string name="budget_history_date">Budget History Date</string>
-    <string name="DElete">TODO</string>
-    <string name="Play">TODO</string>
-    <string name="view_income_price">View Income Price</string>
-    <string name="view_income_item">View Income Item</string>
-    <string name="ViewIncome_date">ViewIncome Date</string>
-    <string name="ViewIncome_item">ViewIncome Item</string>
-    <string name="reunion">Reunion</string>
-    <string name="birthday">Birthday</string>
-    <string name="farewell">Farewell</string>
-    <string name="view_expense_price">Expense Price</string>
-    <string name="ViewExpense_item">Expense Item</string>
-    <string name="ViewExpense_date">Expense date</string>
-    <string name="ExpenseType">Expense Type</string>
-    <string name="paymthd">Payment Method</string>
-    <string name="logOut">Log Out</string>
-    <string name="title_activity_Individual">Individual</string>
-
 
     <string-array name="Event_Items">
         <item>Dummy 01</item>
@@ -255,7 +268,6 @@
         <item>Dummy Price 10</item>
 
     </string-array>
-
     <string-array name="ViewIncome_Items">
         <item>Dummy 01</item>
         <item>Dummy 02</item>
@@ -269,7 +281,6 @@
         <item>Dummy 10</item>
 
     </string-array>
-
     <string-array name="ViewIncome_PriceList">
         <item>Dummy Price 01</item>
         <item>Dummy Price 02</item>
@@ -297,8 +308,6 @@
         <item>Dummy Date 10</item>
 
     </string-array>
-
-
     <string-array name="ViewExpense_Items">
         <item>Dummy 01</item>
         <item>Dummy 02</item>
@@ -312,7 +321,6 @@
         <item>Dummy 10</item>
 
     </string-array>
-
     <string-array name="ViewExpense_PriceList">
         <item>Dummy Price 01</item>
         <item>Dummy Price 02</item>
@@ -326,7 +334,6 @@
         <item>Dummy Price 10</item>
 
     </string-array>
-
     <string-array name="ViewExpense_Date">
         <item>Dummy Date 01</item>
         <item>Dummy Date 02</item>
@@ -340,13 +347,6 @@
         <item>Dummy Date 10</item>
 
     </string-array>
-    <string name="title_activity_add_to_budget">AddToBudget</string>
-    <string name="title_activity_add_to_budget_tab">Add To BudgetTab</string>
-
-    <string name="tab_text_4">Individual</string>
-    <string name="tab_text_5">Family</string>
-    <string name="tab_text_6">Event</string>
-    <string name="budgettype">budgetType</string>
 
     <string-array name="SpinnerIndividual">
         <item>Select Expense Type</item>

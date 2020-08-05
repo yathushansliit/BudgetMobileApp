@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
 
         }else if (checkbox.equals("False")){
-            Toast.makeText(LoginActivity.this," ",Toast.LENGTH_LONG).show();
+
         }
 
         fAuth=FirebaseAuth.getInstance();
@@ -146,7 +146,8 @@ public class LoginActivity extends AppCompatActivity {
 
                                 Toast.makeText(LoginActivity.this,"Logged in Successfully", Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(getApplicationContext(),Home.class));
-                                ((EditText)v).setText("");
+                                mPassword.getText().clear();
+                                mEmail.getText().clear();
                             }else{
                                 Toast.makeText(LoginActivity.this,"Please Verify Your Email Address to Login", Toast.LENGTH_LONG).show();
                             }

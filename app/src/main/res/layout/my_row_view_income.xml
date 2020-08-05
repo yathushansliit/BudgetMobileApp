@@ -21,7 +21,7 @@
             android:layout_height="80dp">
 
             <TextView
-                android:id="@+id/ViewIncomePrice01"
+                android:id="@+id/ViewIncomeAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="100dp"
@@ -34,7 +34,7 @@
                 app:layout_constraintVertical_bias="0.934" />
 
             <TextView
-                android:id="@+id/ViewIncomeItem01"
+                android:id="@+id/ViewIncomeType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -47,17 +47,17 @@
                 app:layout_constraintVertical_bias="0.271" />
 
             <TextView
-                android:id="@+id/ViewIncomeDate01"
+                android:id="@+id/ViewIncomeDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="20dp"
                 android:text="@string/ViewIncome_date"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/ViewIncomePrice01"
+                app:layout_constraintEnd_toStartOf="@+id/ViewIncomeAmount"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ViewIncomeItem01"
+                app:layout_constraintTop_toBottomOf="@+id/ViewIncomeType"
                 app:layout_constraintVertical_bias="0.0" />
 
             <ImageView
@@ -70,9 +70,10 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageView3"
                 app:layout_constraintHorizontal_bias="0.856"
-                app:layout_constraintStart_toEndOf="@+id/ViewIncomeItem01"
+                app:layout_constraintStart_toEndOf="@+id/ViewIncomeType"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.36" />
+                app:layout_constraintVertical_bias="0.36"
+                android:onClick="listViewDeleteBtn"/>
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -84,9 +85,10 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.737"
-                app:layout_constraintStart_toEndOf="@+id/ViewIncomeItem01"
+                app:layout_constraintStart_toEndOf="@+id/ViewIncomeType"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.367" />
+                app:layout_constraintVertical_bias="0.367"
+                android:onClick="listViewUpdateBtn"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

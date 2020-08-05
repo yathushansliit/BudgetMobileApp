@@ -1,15 +1,15 @@
-package com.example.budgetapplication.ExpenseModels;
+package com.example.budgetapplication.Models;
 
-public class IndividualExpense {
+public class IndividualExpenseModel {
     public String individualExpenseId;
     public String individualExpenseName;
     public String individualExpenseAmount;
     public String individualExpenseDate;
     public String expenseType;
 
-    public IndividualExpense(){}
+    public IndividualExpenseModel(){}
 
-    public IndividualExpense(String individualExpenseId, String individualExpenseName, String individualExpenseAmount, String individualExpenseDate, String expenseType) {
+    public IndividualExpenseModel(String individualExpenseId, String individualExpenseName, String individualExpenseAmount, String individualExpenseDate, String expenseType) {
         this.individualExpenseId = individualExpenseId;
         this.individualExpenseName = individualExpenseName;
         this.individualExpenseAmount = individualExpenseAmount;

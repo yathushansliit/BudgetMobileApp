@@ -13,8 +13,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.budgetapplication.ExpenseModels.IndividualExpense;
-import com.example.budgetapplication.ExpenseModels.TotalExpenses;
+import com.example.budgetapplication.Models.IndividualExpenseModel;
+import com.example.budgetapplication.Models.TotalExpensesModel;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -83,11 +83,12 @@ public class AddtoBudgetFragment01 extends Fragment implements AdapterView.OnIte
 
         if(!TextUtils.isEmpty(amount)){
             String id = databaseIndiviualExpense.push().getKey();
-            IndividualExpense individualExpense = new IndividualExpense(id,expenseName,amount,date,"Individual");
-            databaseIndiviualExpense.child(id).setValue(individualExpense);
 
-            TotalExpenses totalExpenses = new TotalExpenses(id,expenseName,amount,date,"Individual");
-            databaseTotalExpense.child(id).setValue(totalExpenses);
+            IndividualExpenseModel individualExpenseModel = new IndividualExpenseModel(id,expenseName,amount,date,"Individual");
+            databaseIndiviualExpense.child(id).setValue(individualExpenseModel);
+
+            TotalExpensesModel totalExpensesModel = new TotalExpensesModel(id,expenseName,amount,date,"Individual");
+            databaseTotalExpense.child(id).setValue(totalExpensesModel);
 
             Toast.makeText(getActivity(), "Individual Expense is added",Toast.LENGTH_LONG).show();
         }

@@ -1,62 +1,48 @@
 package com.example.budgetapplication;
 
 import android.content.Context;
+import android.content.Intent;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.budgetapplication.Models.IncomeModel;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ViewIncomeAdapter extends RecyclerView.Adapter<ViewIncomeAdapter.MyViewHolder> {
+public class ViewIncomeAdapter extends  RecyclerView.ViewHolder  {
 
-    String data1[], data2[], data3[];
-     Context context;
+    TextView txtType,txtDate,txtAmount;
+    ImageView deleteImg;
 
+    public ViewIncomeAdapter(@NonNull View itemView)  {
+        super(itemView);
 
-  public ViewIncomeAdapter(Context ct, String s1[], String s2[], String s3[]){
-      context = ct;
-      data1 = s1;
-      data2 = s2;
-      data3 = s3;
+        txtType = itemView.findViewById(R.id.ViewIncomeType);
+        txtDate = itemView.findViewById(R.id.ViewIncomeDate);
+        txtAmount = itemView.findViewById(R.id.ViewIncomeAmount);
+        deleteImg = itemView.findViewById(R.id.imageView2);
+
 
   }
 
 
-    @NonNull
-    @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.my_row_view_income,parent,false);
-      return new MyViewHolder(view);
-    }
 
-    @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-      holder.textView1.setText(data1[position]);
-        holder.textView2.setText(data2[position]);
-        holder.textView3.setText(data3[position]);
 
-    }
 
-    @Override
-    public int getItemCount() {
-        return data1.length;
-    }
 
-    public class MyViewHolder extends  RecyclerView.ViewHolder {
-
-      TextView textView1,textView2,textView3;
-
-        public MyViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            textView1 = itemView.findViewById(R.id.ViewIncomeItem01);
-            textView2 = itemView.findViewById(R.id.ViewIncomePrice01);
-            textView3 = itemView.findViewById(R.id.ViewIncomeDate01);
-
-        }
-    }
 }
