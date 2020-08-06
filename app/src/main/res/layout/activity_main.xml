@@ -5,7 +5,7 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardview_dark_background"
+    android:background="@drawable/signin_background"
     android:orientation="vertical"
    android:gravity="center"
 
@@ -13,8 +13,8 @@
 
     <ImageView
         android:id="@+id/Logo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginStart="109dp"
         android:layout_marginTop="279dp"
         android:layout_marginEnd="102dp"

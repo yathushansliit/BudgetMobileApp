@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/my_button"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateIncome"></activity>
+        <activity android:name=".UpdateIncome"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".AddToBudgetTab"
             android:label="@string/title_activity_add_to_budget_tab"

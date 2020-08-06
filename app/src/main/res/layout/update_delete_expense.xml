@@ -15,7 +15,7 @@
         android:id="@+id/updateExpenseSpinner"
         android:layout_width="354dp"
         android:layout_height="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="120dp"
         android:entries="@array/SpinnerIndividual"
         android:gravity="center_vertical"
         android:paddingLeft="120dp"

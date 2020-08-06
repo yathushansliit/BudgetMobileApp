@@ -23,7 +23,7 @@
         android:id="@+id/userNameSignup"
         android:layout_width="349dp"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:autofillHints=""
         android:drawableStart="@drawable/ic_account_box_black_24dp"
         android:ems="10"
@@ -116,7 +116,7 @@
         android:id="@+id/nextBtn"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/my_button"
         android:text="Next" />
 
