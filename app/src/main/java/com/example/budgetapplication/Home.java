@@ -56,7 +56,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
             case R.id.LogoutCard: SharedPreferences preferences=getSharedPreferences("checkbox",MODE_PRIVATE);
                 SharedPreferences.Editor editor =preferences.edit();
                 editor.putString("remember","False");editor.apply();finish();break;
-            case R.id.eventCard: intent = new Intent(this,EventTab.class); startActivity(intent); break;
+            case R.id.eventCard: intent = new Intent(this,EventCardView.class); startActivity(intent); break;
             case R.id.BudgetHistoryCard: intent = new Intent(this,BudgetHistory.class); startActivity(intent); break;
             case R.id.reminderCard: intent = new Intent(this,Reminder.class); startActivity(intent); break;
             default: break;

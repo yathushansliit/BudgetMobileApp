@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EventOther"
+    android:background="@drawable/signin_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"/>
+
+    <EditText
+        android:id="@+id/AmountBd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/EnterAmount"
+        android:textColor="#FAF9F9"
+        android:textColorHint="#514A4A"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/CrowdBd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/EnterCrowd"
+        android:textColor="#FAF9F9"
+        android:textColorHint="#514A4A"
+        android:inputType="number" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/checkBoxRefreshmentBd"
+            android:layout_width="0dp"
+            android:layout_marginLeft="125dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:text="@string/Refreshment"
+            tools:ignore="Suspicious0dp"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/checkBoxDecorationBd"
+            android:layout_width="0dp"
+            android:layout_marginLeft="125dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:text="@string/decoration"
+
+            tools:ignore="Suspicious0dp"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/checkBoxBdCakeBd"
+            android:layout_width="0dp"
+            android:layout_marginLeft="125dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:text="@string/cake"
+
+            tools:ignore="Suspicious0dp"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/checkBoxMusicBd"
+            android:layout_width="0dp"
+            android:layout_marginLeft="125dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:text="@string/music"
+
+            tools:ignore="Suspicious0dp"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/checkBoxDanGrpBd"
+            android:layout_width="0dp"
+            android:layout_marginLeft="125dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:text="@string/DancingGroup"
+
+            tools:ignore="Suspicious0dp"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/checkBoxphotoBd"
+            android:layout_width="0dp"
+            android:layout_marginLeft="125dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:text="@string/photo"
+
+            tools:ignore="Suspicious0dp"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="290dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/checkBoxEquipmentBd"
+            android:layout_width="0dp"
+            android:layout_marginLeft="125dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:text="@string/Equipment"
+
+            tools:ignore="Suspicious0dp"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/checkBoxTobaccoBd"
+            android:layout_width="0dp"
+            android:layout_marginLeft="125dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:text="@string/tobacco_alchohol"
+
+            tools:ignore="Suspicious0dp"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/checkBoxInvitationBd"
+            android:layout_width="0dp"
+            android:layout_marginLeft="125dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:text="@string/invitation"
+
+            tools:ignore="Suspicious0dp"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/checkBoxOtherBd"
+            android:layout_width="0dp"
+            android:layout_marginLeft="125dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:text="@string/Other"
+            tools:ignore="Suspicious0dp"
+            android:textColor="#FB8C00"
+            android:buttonTint="#FAF9F9" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="480dp"
+        android:gravity="center_horizontal"
+        >
+
+        <Button
+            android:id="@+id/addOther"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Add"
+            android:background="@drawable/my_button"
+            android:layout_marginRight="20dp"/>
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+
+            android:text="@string/Cancel"
+            android:background="@drawable/my_button01" />
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
