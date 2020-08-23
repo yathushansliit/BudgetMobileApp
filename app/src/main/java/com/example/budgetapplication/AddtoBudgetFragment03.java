@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.budgetapplication.Models.EventModel;
 import com.example.budgetapplication.Models.IndividualExpenseModel;
 import com.example.budgetapplication.Models.TotalExpensesModel;
 import com.google.firebase.database.DatabaseReference;
@@ -83,8 +84,8 @@ public class AddtoBudgetFragment03 extends Fragment implements AdapterView.OnIte
 
         if(!TextUtils.isEmpty(amount)){
             String id = databaseEventExpense.push().getKey();
-            IndividualExpenseModel individualExpenseModel = new IndividualExpenseModel(id,expenseName,amount,date,"Event");
-            databaseEventExpense.child(id).setValue(individualExpenseModel);
+            EventModel eventModel = new EventModel(id,expenseName,amount,date,"Event");
+            databaseEventExpense.child(id).setValue(eventModel);
 
             TotalExpensesModel totalExpensesModel = new TotalExpensesModel(id,expenseName,amount,date,"Event");
             databaseTotalExpense.child(id).setValue(totalExpensesModel);

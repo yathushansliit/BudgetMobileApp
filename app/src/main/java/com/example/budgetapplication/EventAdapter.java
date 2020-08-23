@@ -6,20 +6,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.budgetapplication.Models.EventModel;
+import com.example.budgetapplication.Models.IndividualExpenseModel;
+
+import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder> {
 
-
-    String data1[], data2[];
     Context context;
+    private List<EventModel> eventExpenseModelList;
 
-    public  EventAdapter(Context ct,String s1[], String s2[]){
-        context = ct;
-        data1 = s1;
-        data2 = s2;
-
+    public EventAdapter(Context context, List<EventModel> eventExpenseModelList) {
+        this.context = context;
+        this.eventExpenseModelList = eventExpenseModelList;
     }
 
     @NonNull
@@ -32,13 +34,14 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.EventItem01.setText(data1[position]);
-        holder.EventPrice01.setText(data2[position]);
+        EventModel eventModel = eventExpenseModelList.get(position);
+        holder.EventItem01.setText(eventModel.getEventExpenseName());
+        holder.EventPrice01.setText(eventModel.getEventExpenseAmount());
     }
 
     @Override
     public int getItemCount() {
-        return data1.length;
+        return eventExpenseModelList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

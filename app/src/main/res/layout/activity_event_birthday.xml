@@ -52,7 +52,9 @@
             android:text="@string/Refreshment"
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectBirthdayItem"
+            />
 
 
 
@@ -75,7 +77,8 @@
 
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectBirthdayItem"/>
 
 
 
@@ -95,10 +98,10 @@
             android:layout_weight="1"
             android:layout_height="30dp"
             android:text="@string/cake"
-
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectBirthdayItem"/>
 
 
 
@@ -118,10 +121,10 @@
             android:layout_weight="1"
             android:layout_height="30dp"
             android:text="@string/music"
-
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectBirthdayItem"/>
 
 
 
@@ -141,10 +144,10 @@
             android:layout_weight="1"
             android:layout_height="30dp"
             android:text="@string/DancingGroup"
-
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectBirthdayItem"/>
 
 
 
@@ -167,7 +170,8 @@
 
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectBirthdayItem"/>
 
 
 
@@ -190,7 +194,8 @@
 
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectBirthdayItem"/>
 
 
 
@@ -213,7 +218,8 @@
 
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectBirthdayItem"/>
 
 
 
@@ -236,7 +242,8 @@
 
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectBirthdayItem"/>
 
 
 
@@ -258,7 +265,8 @@
             android:text="@string/Other"
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectBirthdayItem"/>
 
     </LinearLayout>
 

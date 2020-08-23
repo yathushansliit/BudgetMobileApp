@@ -13,7 +13,7 @@
         android:orientation="vertical"/>
 
     <EditText
-        android:id="@+id/AmountBd"
+        android:id="@+id/FarewellAmountBd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -25,7 +25,7 @@
         android:inputType="number" />
 
     <EditText
-        android:id="@+id/CrowdBd"
+        android:id="@+id/FarewellCrowdBd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
@@ -44,7 +44,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxRefreshmentBd"
+            android:id="@+id/checkBoxRefreshmentBdF"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -52,7 +52,8 @@
             android:text="@string/Refreshment"
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectFairwellItem"/>
 
 
 
@@ -66,7 +67,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxDecorationBd"
+            android:id="@+id/checkBoxDecorationBdF"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -75,7 +76,8 @@
 
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectFairwellItem"/>
 
 
 
@@ -89,7 +91,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxBdCakeBd"
+            android:id="@+id/checkBoxBdCakeBdF"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -98,7 +100,8 @@
 
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectFairwellItem"/>
 
 
 
@@ -112,7 +115,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxMusicBd"
+            android:id="@+id/checkBoxMusicBdF"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -121,7 +124,8 @@
 
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectFairwellItem"/>
 
 
 
@@ -135,7 +139,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxDanGrpBd"
+            android:id="@+id/checkBoxDanGrpBdF"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -144,7 +148,8 @@
 
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectFairwellItem"/>
 
 
 
@@ -158,7 +163,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxphotoBd"
+            android:id="@+id/checkBoxphotoBdF"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -167,7 +172,8 @@
 
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectFairwellItem"/>
 
 
 
@@ -181,7 +187,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxEquipmentBd"
+            android:id="@+id/checkBoxEquipmentBdF"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -190,7 +196,8 @@
 
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectFairwellItem"/>
 
 
 
@@ -204,7 +211,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxTobaccoBd"
+            android:id="@+id/checkBoxTobaccoBdF"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -213,7 +220,8 @@
 
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectFairwellItem"/>
 
 
 
@@ -227,7 +235,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxInvitationBd"
+            android:id="@+id/checkBoxInvitationBdF"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -236,7 +244,8 @@
 
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectFairwellItem"/>
 
 
 
@@ -250,7 +259,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxOtherBd"
+            android:id="@+id/checkBoxOtherBdF"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -258,7 +267,8 @@
             android:text="@string/Other"
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectFairwellItem"/>
 
     </LinearLayout>
 
@@ -279,7 +289,7 @@
             android:layout_marginRight="20dp"/>
 
         <Button
-            android:id="@+id/cancel"
+            android:id="@+id/farewellcancel"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
 

@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 
 public class Individual1 extends AppCompatActivity {
 
     Button button;
+    EditText txtAmount;
     ArrayList<String> selection = new ArrayList<String>();
 
 
@@ -23,11 +25,14 @@ public class Individual1 extends AppCompatActivity {
 
 
         button = findViewById(R.id.add);
+        txtAmount = findViewById(R.id.Amount);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Individual1.this, IndividualListView.class);
                 intent.putExtra("selectedItems",selection);
+                intent.putExtra("amount", txtAmount.getText().toString());
                 startActivity(intent);
             }
         });

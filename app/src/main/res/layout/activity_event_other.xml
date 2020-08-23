@@ -13,7 +13,7 @@
         android:orientation="vertical"/>
 
     <EditText
-        android:id="@+id/AmountBd"
+        android:id="@+id/AmountBdOther"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -25,7 +25,7 @@
         android:inputType="number" />
 
     <EditText
-        android:id="@+id/CrowdBd"
+        android:id="@+id/CrowdBdOther"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
@@ -44,7 +44,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxRefreshmentBd"
+            android:id="@+id/checkBoxRefreshmentBdO"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -52,7 +52,8 @@
             android:text="@string/Refreshment"
             tools:ignore="Suspicious0dp"
             android:textColor="#FB8C00"
-            android:buttonTint="#FAF9F9" />
+            android:buttonTint="#FAF9F9"
+            android:onClick="selectOtherItem"/>
 
 
 
@@ -66,7 +67,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxDecorationBd"
+            android:id="@+id/checkBoxDecorationBdO"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -89,7 +90,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxBdCakeBd"
+            android:id="@+id/checkBoxBdCakeBdO"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -112,7 +113,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxMusicBd"
+            android:id="@+id/checkBoxMusicBdO"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -135,7 +136,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxDanGrpBd"
+            android:id="@+id/checkBoxDanGrpBdO"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -158,7 +159,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxphotoBd"
+            android:id="@+id/checkBoxphotoBdO"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -181,7 +182,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxEquipmentBd"
+            android:id="@+id/checkBoxEquipmentBdO"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -204,7 +205,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxTobaccoBd"
+            android:id="@+id/checkBoxTobaccoBdO"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -227,7 +228,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxInvitationBd"
+            android:id="@+id/checkBoxInvitationBdO"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -250,7 +251,7 @@
         android:gravity="center">
 
         <CheckBox
-            android:id="@+id/checkBoxOtherBd"
+            android:id="@+id/checkBoxOtherBdO"
             android:layout_width="0dp"
             android:layout_marginLeft="125dp"
             android:layout_weight="1"
@@ -279,7 +280,7 @@
             android:layout_marginRight="20dp"/>
 
         <Button
-            android:id="@+id/cancel"
+            android:id="@+id/cancelOther"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
 

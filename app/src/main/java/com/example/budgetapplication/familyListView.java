@@ -1,13 +1,22 @@
 package com.example.budgetapplication;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.budgetapplication.Models.FamilyBudgetModel;
 import com.example.budgetapplication.Models.FamilyExpenseModel;
+import com.example.budgetapplication.Models.IndividualBudgetModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,18 +32,40 @@ public class familyListView extends AppCompatActivity {
     private RecyclerView recyclerView;
     private FamilyAdapter familyAdapter;
     private List<FamilyExpenseModel> familyExpenseModelList;
+    Integer familyBudgetAmount,familyBalance;
+    EditText txtFamilyTotalAmount,txtFamilyBudgetAmount,txtFamilyBudgetBalance;
     private ArrayList<String> selectedFamilyItemsList;
-    Integer amount =0;
+    EditText txtFamilyBudgetName;
+    Button btnSave;
+    Integer famount =0;
 
     DatabaseReference databaseReference;
+    DatabaseReference familyBudgetdatabaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_family_list_view);
 
+        txtFamilyTotalAmount = findViewById(R.id.txtTotalFamilyItems);
+        txtFamilyBudgetAmount = findViewById(R.id.txtFamilyBudgetAmount);
+        txtFamilyBudgetBalance = findViewById(R.id.txtFamilyBalance);
+
+        familyBudgetdatabaseReference = FirebaseDatabase.getInstance().getReference("FamilyBudget");
+
+        btnSave = findViewById(R.id.saveFamily);
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showSaveBudgetDialog();
+            }
+        });
+
         Bundle bundle = getIntent().getExtras();
         selectedFamilyItemsList=bundle.getStringArrayList("selectedFamilyItems");
+        familyBudgetAmount = Integer.parseInt(bundle.getString("FamilyAmount"));
+        txtFamilyBudgetAmount.setText(familyBudgetAmount.toString());
 
         Toast.makeText(this, selectedFamilyItemsList.toString() ,Toast.LENGTH_LONG).show();
 
@@ -194,10 +225,14 @@ public class familyListView extends AppCompatActivity {
                     FamilyExpenseModel familyExpenseModel = snapshot.getValue(FamilyExpenseModel.class);
 
                     familyExpenseModelList.add(familyExpenseModel);
-                   amount = amount + Integer.parseInt(familyExpenseModel.getFamilyExpenseAmount());
+                   famount = famount + Integer.parseInt(familyExpenseModel.getFamilyExpenseAmount());
 
                 }
                 familyAdapter.notifyDataSetChanged();
+                Log.d("Listlllllll fffAmout", String.valueOf(famount));
+                txtFamilyTotalAmount.setText(famount.toString());
+                familyBalance = familyBudgetAmount-famount;
+                txtFamilyBudgetBalance.setText(familyBalance.toString());
             }
         }
 
@@ -206,4 +241,58 @@ public class familyListView extends AppCompatActivity {
 
         }
     };
+
+
+    private void showSaveBudgetDialog() {
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        final View dialogView = inflater.inflate(R.layout.save_family_budget_dialog, null);
+        dialogBuilder.setView(dialogView);
+
+        txtFamilyBudgetName = (EditText) dialogView.findViewById(R.id.txtFamilyBudgetName);
+        final Button btnSaveIndividualBudget = (Button) dialogView.findViewById(R.id.btnSaveFamilyBudget);
+        final Button btnClose = (Button) dialogView.findViewById(R.id.btnFamilyClose);
+
+
+
+
+        dialogBuilder.setTitle("Save Budget");
+        final AlertDialog b = dialogBuilder.create();
+        b.show();
+
+
+        btnSaveIndividualBudget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveInduvidualBudget();
+                b.dismiss();
+
+            }
+        });
+
+
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                b.dismiss();
+            }
+        });
+
+    }
+
+    private void saveInduvidualBudget(){
+        String budgetName = txtFamilyBudgetName.getText().toString().trim();
+
+        if(!TextUtils.isEmpty(budgetName)){
+            String id = familyBudgetdatabaseReference.push().getKey();
+            FamilyBudgetModel familyBudgetModel = new FamilyBudgetModel(id,budgetName.toString(),familyExpenseModelList,familyBudgetAmount.toString(),famount.toString(),familyBalance.toString());
+            familyBudgetdatabaseReference.child(id).setValue(familyBudgetModel);
+
+            Toast.makeText(this, "Family Budget is added",Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(this, "You should enter the family budget Name", Toast.LENGTH_LONG).show();
+        }
+    }
 }

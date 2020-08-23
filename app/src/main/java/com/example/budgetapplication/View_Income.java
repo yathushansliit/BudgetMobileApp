@@ -59,10 +59,10 @@ public class View_Income extends AppCompatActivity {
         setContentView(R.layout.activity_view__income);
 
         recyclerView = findViewById(R.id.recyclerViewIncome);
-        incomes = new ArrayList<>();
+        //incomes = new ArrayList<>();
         recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        incomeArrayList=new ArrayList<IncomeModel>();
+        //incomeArrayList=new ArrayList<IncomeModel>();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Income");
         databaseReference.keepSynced(true);
         options = new FirebaseRecyclerOptions.Builder<IncomeModel>().setQuery(databaseReference, IncomeModel.class).build();

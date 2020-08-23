@@ -9,15 +9,27 @@
         android:roundIcon="@drawable/my_button"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EventOther"
-            android:theme="@style/AppTheme.NoActionBar" ></activity>
-        <activity android:name=".EventFarewell"
+        <activity android:name=".EventOtherListView"></activity>
+        <activity android:name=".EventFarewellListView" />
+        <activity android:name=".EventReunionListView" />
+        <activity android:name=".EventBudgetHistoryListView" />
+        <activity android:name=".FamilyBudgetHistoryListView" />
+        <activity android:name=".IndividualBudgetHistoryListView" />
+        <activity android:name=".MyBudgetHistory" />
+        <activity
+            android:name=".EventOther"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".EventReunion"
+        <activity
+            android:name=".EventFarewell"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".EventBirthday"
+        <activity
+            android:name=".EventReunion"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".EventCardView"
+        <activity
+            android:name=".EventBirthday"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EventCardView"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".UpdateIncome"
@@ -60,7 +72,6 @@
         <activity
             android:name=".Reminder"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity
             android:name=".Expenses"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -77,8 +88,6 @@
             android:name=".Individual1"
             android:label="@string/title_activity_Individual"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
-
         <activity
             android:name=".Firstdisplay"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

@@ -3,6 +3,7 @@ package com.example.budgetapplication;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.TableLayout;
 
@@ -18,6 +19,7 @@ public class BudgetHistory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_budget_history);
+
 
         tabLayout = (TabLayout) findViewById(R.id.tabsBH);
         viewPager  =  (ViewPager)  findViewById(R.id.view_pagerBH);

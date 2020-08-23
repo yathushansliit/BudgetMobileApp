@@ -5,6 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.budgetapplication.Models.FamilyBudgetModel;
+import com.example.budgetapplication.Models.IndividualBudgetModel;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -18,22 +25,55 @@ public class BugetHistoryfragment02 extends Fragment {
 
     View v;
     private RecyclerView myreclerview;
-    private List<BHFragment02Model> model02;
+    private List<FamilyBudgetModel> familyBudgetModelList;
+    private FirebaseRecyclerAdapter<FamilyBudgetModel,RecyclerViewAdapterBhFamily> adapter;
+    private DatabaseReference databaseReference;
+    private FirebaseRecyclerOptions<FamilyBudgetModel> options;
 
     public BugetHistoryfragment02() {
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.stopListening();
+    }
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         v = inflater.inflate(R.layout.budgethistory_fragment02, container,false);
-
         myreclerview = (RecyclerView) v.findViewById(R.id.recyclerBhFamily);
-        RecyclerViewAdapterBhFamily recyclerViewAdapterBhFamily = new RecyclerViewAdapterBhFamily(getContext(),model02);
-        myreclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
-        myreclerview.setAdapter(recyclerViewAdapterBhFamily);
+        myreclerview.setHasFixedSize(false);
+        myreclerview.setLayoutManager(new LinearLayoutManager(getContext()));
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("FamilyBudget");
+        databaseReference.keepSynced(true);
+        options = new FirebaseRecyclerOptions.Builder<FamilyBudgetModel>().setQuery(databaseReference, FamilyBudgetModel.class).build();
+        familyBudgetModelList = new ArrayList<>();
+        adapter = new FirebaseRecyclerAdapter<FamilyBudgetModel, RecyclerViewAdapterBhFamily>(options) {
+            @NonNull
+            @Override
+            public RecyclerViewAdapterBhFamily onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = inflater.from(getContext()).inflate(R.layout.my_row_budgethistory_family,parent,false);
+                return new RecyclerViewAdapterBhFamily(view);
+            }
+
+            @Override
+            protected void onBindViewHolder(@NonNull RecyclerViewAdapterBhFamily recyclerViewAdapterBhFamily, int i, @NonNull FamilyBudgetModel familyBudgetModel) {
+                recyclerViewAdapterBhFamily.tv_item.setText(familyBudgetModel.getFamilyBudgetName());
+                recyclerViewAdapterBhFamily.tv_Date.setText(familyBudgetModel.getFamilyBudgetAmount());
+                recyclerViewAdapterBhFamily.tv_price.setText(familyBudgetModel.getFamilyTotalBudgetAmount());
+            }
+        };
+
+        myreclerview.setAdapter(adapter);
         return v;
     }
 
@@ -41,17 +81,7 @@ public class BugetHistoryfragment02 extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        model02 = new ArrayList<>();
-        model02.add(new BHFragment02Model("Dummy01","DummyDate01","Rs 0000.00"));
-        model02.add(new BHFragment02Model("Dummy02","DummyDate02","Rs 0000.00"));
-        model02.add(new BHFragment02Model("Dummy03","DummyDate03","Rs 0000.00"));
-        model02.add(new BHFragment02Model("Dummy04","DummyDate04","Rs 0000.00"));
-        model02.add(new BHFragment02Model("Dummy05","DummyDate05","Rs 0000.00"));
-        model02.add(new BHFragment02Model("Dummy06","DummyDate06","Rs 0000.00"));
-        model02.add(new BHFragment02Model("Dummy07","DummyDate07","Rs 0000.00"));
-        model02.add(new BHFragment02Model("Dummy08","DummyDate08","Rs 0000.00"));
-        model02.add(new BHFragment02Model("Dummy09","DummyDate09","Rs 0000.00"));
-        model02.add(new BHFragment02Model("Dummy10","DummyDate10","Rs 0000.00"));
+
 
     }
 

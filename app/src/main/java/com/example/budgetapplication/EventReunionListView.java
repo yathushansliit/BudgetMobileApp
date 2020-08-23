@@ -16,8 +16,6 @@ import android.widget.Toast;
 
 import com.example.budgetapplication.Models.EventBudgetModel;
 import com.example.budgetapplication.Models.EventModel;
-import com.example.budgetapplication.Models.IndividualBudgetModel;
-import com.example.budgetapplication.Models.IndividualExpenseModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,8 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class eventListView extends AppCompatActivity {
-
+public class EventReunionListView extends AppCompatActivity {
     private RecyclerView recyclerView;
     private EventAdapter eventAdapter;
     private List<EventModel> eventModelList;
@@ -48,12 +45,12 @@ public class eventListView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event_list_view);
+        setContentView(R.layout.activity_event_reunion_list_view);
 
         eventBudgetDatabaseReference = FirebaseDatabase.getInstance().getReference("EventBudget");
 
-        btnSave = findViewById(R.id.saveEvent);
-        btnClose = findViewById(R.id.cancel);
+        btnSave = findViewById(R.id.rsaveEvent);
+        btnClose = findViewById(R.id.rcancel);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,10 +61,9 @@ public class eventListView extends AppCompatActivity {
 
 
         Bundle bundle = getIntent().getExtras();
-        selectedEventItemsList=bundle.getStringArrayList("selectedBdItems");
-        eventType = bundle.getString("EventType");
-        budgetAmount = Integer.parseInt(bundle.getString("BirthdayAmount"));
-        crowd = Integer.parseInt(bundle.getString("crowd"));
+        selectedEventItemsList=bundle.getStringArrayList("selectedReunionItems");
+        budgetAmount = Integer.parseInt(bundle.getString("ReunionAmount"));
+        crowd = Integer.parseInt(bundle.getString("reunionCrowd"));
 
         recyclerView = findViewById(R.id.recyclerEvent);
         recyclerView.setHasFixedSize(true);
@@ -212,7 +208,7 @@ public class eventListView extends AppCompatActivity {
         if(!TextUtils.isEmpty(eventName)){
             String id = eventBudgetDatabaseReference.push().getKey();
 
-            EventBudgetModel eventBudgetModel = new EventBudgetModel(id,eventName,crowd.toString(),budgetAmount.toString(),totalBudgetAmount.toString(),eventModelList,eventType);
+            EventBudgetModel eventBudgetModel = new EventBudgetModel(id,eventName,crowd.toString(),budgetAmount.toString(),totalBudgetAmount.toString(),eventModelList,"Reunion");
             eventBudgetDatabaseReference.child(id).setValue(eventBudgetModel);
 
             Toast.makeText(this, "Event Budget is added",Toast.LENGTH_LONG).show();
@@ -221,5 +217,4 @@ public class eventListView extends AppCompatActivity {
             Toast.makeText(this, "You should enter the Event Name", Toast.LENGTH_LONG).show();
         }
     }
-
-}
+ }

@@ -1,14 +1,23 @@
 package com.example.budgetapplication;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.budgetapplication.Models.FamilyExpenseModel;
+import com.example.budgetapplication.Models.IndividualBudgetModel;
 import com.example.budgetapplication.Models.IndividualExpenseModel;
+import com.example.budgetapplication.Models.TotalExpensesModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,18 +32,41 @@ public class IndividualListView extends AppCompatActivity {
     private RecyclerView recyclerView;
     private IndividualAdapter individualAdapter;
     private List<IndividualExpenseModel> individualExpenseModelList;
+    Integer budgetAmount,balance;
+    EditText txtTotalAmount,txtBudgetAmount,txtBudgetBalance;
+    EditText txtBudgetName;
+    Button btnsave;
     private ArrayList<String> selectedItemsList;
     Integer amount =0;
 
     DatabaseReference databaseReference;
+    DatabaseReference individualBudgetDatabaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_individual_list_view);
 
+        individualBudgetDatabaseReference = FirebaseDatabase.getInstance().getReference("IndividualBudget");
+
+        txtTotalAmount = findViewById(R.id.txtTotalItems);
+        txtBudgetAmount = findViewById(R.id.txtBudgetAmount);
+        txtBudgetBalance = findViewById(R.id.txtBalance);
+
+        btnsave = findViewById(R.id.saveIndividual);
+
+        btnsave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showSaveBudgetDialog();
+            }
+        });
+
+
         Bundle bundle = getIntent().getExtras();
         selectedItemsList=bundle.getStringArrayList("selectedItems");
+        budgetAmount = Integer.parseInt(bundle.getString("amount"));
+        txtBudgetAmount.setText(budgetAmount.toString());
 
         Toast.makeText(this, selectedItemsList.toString() ,Toast.LENGTH_LONG).show();
 
@@ -186,6 +218,7 @@ public class IndividualListView extends AppCompatActivity {
     }
 
 
+
     ValueEventListener valueEventListener = new ValueEventListener() {
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
@@ -196,9 +229,15 @@ public class IndividualListView extends AppCompatActivity {
 
                     individualExpenseModelList.add(individualExpenseModel);
                     amount = amount + Integer.parseInt(individualExpenseModel.getIndividualExpenseAmount());
+                    Log.d("Listlllllll", individualExpenseModel.getIndividualExpenseAmount());
+
                 }
                 individualAdapter.notifyDataSetChanged();
-                Log.d("List", String.valueOf(individualExpenseModelList));
+                Log.d("Listlllllll Amout", String.valueOf(amount));
+                txtTotalAmount.setText(amount.toString());
+                balance = budgetAmount-amount;
+                txtBudgetBalance.setText(balance.toString());
+
             }
         }
 
@@ -208,7 +247,56 @@ public class IndividualListView extends AppCompatActivity {
         }
     };
 
+    private void showSaveBudgetDialog() {
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        final View dialogView = inflater.inflate(R.layout.save_individual_budget_dialog, null);
+        dialogBuilder.setView(dialogView);
+
+        txtBudgetName = (EditText) dialogView.findViewById(R.id.txtBudgetName);
+        final Button btnSaveIndividualBudget = (Button) dialogView.findViewById(R.id.btnSaveIndividualBudget);
+        final Button btnClose = (Button) dialogView.findViewById(R.id.btnClose);
+
+        dialogBuilder.setTitle("Save Budget");
+        final AlertDialog b = dialogBuilder.create();
+        b.show();
 
 
+        btnSaveIndividualBudget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveInduvidualBudget();
+                b.dismiss();
+
+            }
+        });
+
+
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                b.dismiss();
+            }
+        });
+
+
+    }
+
+    private void saveInduvidualBudget(){
+        String budgetName = txtBudgetName.getText().toString().trim();
+
+        if(!TextUtils.isEmpty(budgetName)){
+            String id = individualBudgetDatabaseReference.push().getKey();
+
+            IndividualBudgetModel individualBudgetModel = new IndividualBudgetModel(id,txtBudgetName.toString(),individualExpenseModelList,amount.toString(),balance.toString(),budgetAmount.toString());
+            individualBudgetDatabaseReference.child(id).setValue(individualBudgetModel);
+
+            Toast.makeText(this, "Individual Expense is added",Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(this, "You should enter the budget Name", Toast.LENGTH_LONG).show();
+        }
+    }
 
 }

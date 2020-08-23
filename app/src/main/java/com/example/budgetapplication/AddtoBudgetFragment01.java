@@ -79,7 +79,7 @@ public class AddtoBudgetFragment01 extends Fragment implements AdapterView.OnIte
     private void addIndividualExpense(){
         String expenseName = spinner.getSelectedItem().toString();
         String amount = txtIndiviualAmount.getText().toString().trim();
-        String date = txtIndiviualAmount.getText().toString().trim();
+        String date = txtIndiviualDate.getText().toString().trim();
 
         if(!TextUtils.isEmpty(amount)){
             String id = databaseIndiviualExpense.push().getKey();
