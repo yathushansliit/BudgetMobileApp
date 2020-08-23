@@ -71,8 +71,6 @@ public class BugetHistoryfragment01 extends Fragment {
             }
         };
 
-//        RecyclerViewAdapterBhIndividual recyclerViewAdapterBhIndividual = new RecyclerViewAdapterBhIndividual(getContext(),individualBudgetModelList);
-//        myreclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
         myreclerview.setAdapter(adapter);
         return v;
     }

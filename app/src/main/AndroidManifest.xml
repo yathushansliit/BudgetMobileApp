@@ -12,10 +12,9 @@
         <activity android:name=".EventOtherListView"></activity>
         <activity android:name=".EventFarewellListView" />
         <activity android:name=".EventReunionListView" />
-        <activity android:name=".EventBudgetHistoryListView" />
+        
         <activity android:name=".FamilyBudgetHistoryListView" />
         <activity android:name=".IndividualBudgetHistoryListView" />
-        <activity android:name=".MyBudgetHistory" />
         <activity
             android:name=".EventOther"
             android:theme="@style/AppTheme.NoActionBar" />
