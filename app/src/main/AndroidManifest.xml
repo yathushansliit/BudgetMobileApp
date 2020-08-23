@@ -12,8 +12,7 @@
         <activity android:name=".EventOtherListView"></activity>
         <activity android:name=".EventFarewellListView" />
         <activity android:name=".EventReunionListView" />
-        
-        <activity android:name=".FamilyBudgetHistoryListView" />
+
         <activity android:name=".IndividualBudgetHistoryListView" />
         <activity
             android:name=".EventOther"
