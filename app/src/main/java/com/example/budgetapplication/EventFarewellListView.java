@@ -59,6 +59,13 @@ public class EventFarewellListView extends AppCompatActivity {
             }
         });
 
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
 
         Bundle bundle = getIntent().getExtras();
         selectedEventItemsList=bundle.getStringArrayList("selectedFairwellItems");
@@ -188,7 +195,7 @@ public class EventFarewellListView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 saveEventBudget();
-                b.dismiss();
+
 
             }
         });
@@ -205,16 +212,17 @@ public class EventFarewellListView extends AppCompatActivity {
     private void saveEventBudget(){
         String eventName = txtEventBudgetName.getText().toString().trim();
 
-        if(!TextUtils.isEmpty(eventName)){
+        if(TextUtils.isEmpty(eventName)){
+            txtEventBudgetName.setError("Budget Name required.");
+        }
+        else{
             String id = eventBudgetDatabaseReference.push().getKey();
 
             EventBudgetModel eventBudgetModel = new EventBudgetModel(id,eventName,crowd.toString(),budgetAmount.toString(),totalBudgetAmount.toString(),eventModelList,"Farewell");
             eventBudgetDatabaseReference.child(id).setValue(eventBudgetModel);
 
             Toast.makeText(this, "Event Budget is added",Toast.LENGTH_LONG).show();
-        }
-        else{
-            Toast.makeText(this, "You should enter the Event Name", Toast.LENGTH_LONG).show();
+            finish();
         }
     }
 
