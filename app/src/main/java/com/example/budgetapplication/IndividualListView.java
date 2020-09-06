@@ -278,7 +278,7 @@ public class IndividualListView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 saveInduvidualBudget();
-                b.dismiss();
+
 
             }
         });
@@ -298,20 +298,19 @@ public class IndividualListView extends AppCompatActivity {
         Date date = Calendar.getInstance().getTime();
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
         String formattedDate = df.format(date);
-
-
         String budgetName = txtBudgetName.getText().toString().trim();
 
         if(!TextUtils.isEmpty(budgetName)){
-            String id = individualBudgetDatabaseReference.push().getKey();
             txtBudgetName.setError("Budget Name required.");
+
+        }
+        else{
+            String id = individualBudgetDatabaseReference.push().getKey();
             IndividualBudgetModel individualBudgetModel = new IndividualBudgetModel(id,budgetName,individualExpenseModelList,amount.toString(),balance.toString(),budgetAmount.toString(),formattedDate);
             individualBudgetDatabaseReference.child(id).setValue(individualBudgetModel);
 
             Toast.makeText(this, "Individual Expense is added",Toast.LENGTH_LONG).show();
-        }
-        else{
-            Toast.makeText(this, "You should enter the budget Name", Toast.LENGTH_LONG).show();
+            finish();
         }
     }
 

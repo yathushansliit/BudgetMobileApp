@@ -39,7 +39,7 @@ public class familyListView extends AppCompatActivity {
     EditText txtFamilyTotalAmount,txtFamilyBudgetAmount,txtFamilyBudgetBalance;
     private ArrayList<String> selectedFamilyItemsList;
     EditText txtFamilyBudgetName;
-    Button btnSave;
+    Button btnSave,btnCancel;
     Integer famount =0;
 
     DatabaseReference databaseReference;
@@ -53,6 +53,7 @@ public class familyListView extends AppCompatActivity {
         txtFamilyTotalAmount = findViewById(R.id.txtTotalFamilyItems);
         txtFamilyBudgetAmount = findViewById(R.id.txtFamilyBudgetAmount);
         txtFamilyBudgetBalance = findViewById(R.id.txtFamilyBalance);
+        btnCancel = findViewById(R.id.familyBudcancel);
 
         familyBudgetdatabaseReference = FirebaseDatabase.getInstance().getReference("FamilyBudget");
 
@@ -62,6 +63,13 @@ public class familyListView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showSaveBudgetDialog();
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 
@@ -257,23 +265,18 @@ public class familyListView extends AppCompatActivity {
         final Button btnSaveIndividualBudget = (Button) dialogView.findViewById(R.id.btnSaveFamilyBudget);
         final Button btnClose = (Button) dialogView.findViewById(R.id.btnFamilyClose);
 
-
-
-
         dialogBuilder.setTitle("Save Budget");
         final AlertDialog b = dialogBuilder.create();
         b.show();
-
 
         btnSaveIndividualBudget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 saveInduvidualBudget();
-                b.dismiss();
+                //b.dismiss();
 
             }
         });
-
 
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -290,16 +293,17 @@ public class familyListView extends AppCompatActivity {
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
         String formattedDate = df.format(date);
 
-        if(!TextUtils.isEmpty(budgetName)){
+        if(TextUtils.isEmpty(budgetName)){
             txtFamilyBudgetName.setError("Family Budget Name required");
+
+        }
+        else{
             String id = familyBudgetdatabaseReference.push().getKey();
             FamilyBudgetModel familyBudgetModel = new FamilyBudgetModel(id,budgetName.toString(),familyExpenseModelList,familyBudgetAmount.toString(),famount.toString(),familyBalance.toString(),formattedDate);
             familyBudgetdatabaseReference.child(id).setValue(familyBudgetModel);
 
-            Toast.makeText(this, "Family Budget is added",Toast.LENGTH_LONG).show();
-        }
-        else{
-            Toast.makeText(this, "You should enter the family budget Name", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Family Budget is added Successfully",Toast.LENGTH_LONG).show();
+            finish();
         }
     }
 }
