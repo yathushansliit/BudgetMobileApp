@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,9 +14,9 @@ import java.util.ArrayList;
 
 public class Family extends AppCompatActivity {
 
-    Button button;
+    Button button,btn2;
     ArrayList<String> selection = new ArrayList<String>();
-    EditText txtAmount;
+    EditText txtfamAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,17 +24,30 @@ public class Family extends AppCompatActivity {
         setContentView(R.layout.activity_family);
 
         button = findViewById(R.id.addFamily);
-        txtAmount = findViewById(R.id.txtAmount);
+        txtfamAmount = findViewById(R.id.txtAmount);
+        btn2 = findViewById(R.id.familycancel);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Family.this, familyListView.class);
-                intent.putExtra("selectedFamilyItems",selection);
-                intent.putExtra("FamilyAmount", txtAmount.getText().toString());
-                startActivity(intent);
+                final String amt =txtfamAmount.getText().toString().trim();
+                if (TextUtils.isEmpty(amt)){
+                    txtfamAmount.setError("Budget amount is required.");
+                    return;
+                }
+                else {
+                    Intent intent = new Intent(Family.this, familyListView.class);
+                    intent.putExtra("selectedFamilyItems",selection);
+                    intent.putExtra("FamilyAmount", txtfamAmount.getText().toString());
+                    startActivity(intent);
+                }
+            }
+        });
 
-
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

@@ -1,49 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Expenses"
+    tools:context=".BudgetCharts"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/signin_background">
+    android:background="@drawable/signin_background">>
 
     <Button
-        android:id="@+id/AddTobudget"
+        android:id="@+id/ichart"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:background="@drawable/my_button"
-        android:text="@string/add_budget"
+        android:text="Individual Chart"
         android:gravity="center"/>
 
     <Button
-        android:id="@+id/AddToExpense"
+        android:id="@+id/fchart"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/my_button"
-        android:text="@string/add_expens"
+        android:text="Family Chart"
         android:gravity="center"/>
-
     <Button
-        android:id="@+id/ViewExpense"
+        android:id="@+id/echart"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/my_button"
-        android:text="@string/view_expense"
+        android:text="Event Chart"
         android:gravity="center"/>
-
-    <Button
-        android:id="@+id/ViewChart"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/my_button"
-        android:text="Line Chart"
-        android:gravity="center"/>
-
-
-
 
 </LinearLayout>

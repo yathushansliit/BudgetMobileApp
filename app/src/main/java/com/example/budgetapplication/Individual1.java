@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 
 public class Individual1 extends AppCompatActivity {
 
-    Button button;
+    Button button,btn1;
     EditText txtAmount;
     ArrayList<String> selection = new ArrayList<String>();
 
@@ -25,15 +26,32 @@ public class Individual1 extends AppCompatActivity {
 
 
         button = findViewById(R.id.add);
+        btn1 = findViewById(R.id.individualcancel);
         txtAmount = findViewById(R.id.Amount);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Individual1.this, IndividualListView.class);
-                intent.putExtra("selectedItems",selection);
-                intent.putExtra("amount", txtAmount.getText().toString());
-                startActivity(intent);
+                final String amt =txtAmount.getText().toString().trim();
+                if (TextUtils.isEmpty(amt)){
+                    txtAmount.setError("Budget amount is required.");
+                    return;
+                }
+                else
+                    {
+                    Intent intent = new Intent(Individual1.this, IndividualListView.class);
+                    intent.putExtra("selectedItems",selection);
+                    intent.putExtra("amount", txtAmount.getText().toString());
+                    startActivity(intent);
+                    }
+            }
+        });
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 

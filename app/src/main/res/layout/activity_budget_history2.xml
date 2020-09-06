@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BudgetHistory"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/signin_background">>
+
+    <Button
+        android:id="@+id/BudgetHistoryListView"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/my_button"
+        android:text="Budget History List View"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/BudgetHistoryCHartView"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/my_button"
+        android:text="Budget History chart View"
+        android:gravity="center"/>
+
+</LinearLayout>

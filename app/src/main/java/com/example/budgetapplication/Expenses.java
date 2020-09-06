@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class Expenses extends AppCompatActivity {
 
-     Button btn,btn01,btn02;
+     Button btn,btn01,btn02,btn03;
 
 
 
@@ -44,5 +44,15 @@ public class Expenses extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btn03 = findViewById(R.id.ViewChart);
+        btn03.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Expenses.this, EventBudgetLineChart.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

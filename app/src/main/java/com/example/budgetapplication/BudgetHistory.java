@@ -1,36 +1,42 @@
 package com.example.budgetapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TableLayout;
-
-import com.google.android.material.tabs.TabLayout;
+import android.view.View;
+import android.widget.Button;
 
 public class BudgetHistory extends AppCompatActivity {
 
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
-    private BudgetHistoryViewPagerAdapter adapter;
+    Button button,button1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_budget_history);
+        setContentView(R.layout.activity_budget_history2);
 
 
-        tabLayout = (TabLayout) findViewById(R.id.tabsBH);
-        viewPager  =  (ViewPager)  findViewById(R.id.view_pagerBH);
-        adapter    =  new BudgetHistoryViewPagerAdapter(getSupportFragmentManager());
+        button = findViewById(R.id.BudgetHistoryListView);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(BudgetHistory.this,BudgetHistoryListView.class);
+                startActivity(intent);
+            }
+        });
 
-        //Add Fragments here
-        adapter.AddFragment(new BugetHistoryfragment01(),"Individual");
-        adapter.AddFragment(new BugetHistoryfragment02(),"Family");
-        adapter.AddFragment(new BugetHistoryfragment03(),"Event");
 
-        viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPager(viewPager);
+        button1 = findViewById(R.id.BudgetHistoryCHartView);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2= new Intent(BudgetHistory.this,BudgetCharts.class);
+                startActivity(intent2);
+            }
+        });
+
+
     }
 }

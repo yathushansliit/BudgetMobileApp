@@ -24,7 +24,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class familyListView extends AppCompatActivity {
@@ -283,10 +286,14 @@ public class familyListView extends AppCompatActivity {
 
     private void saveInduvidualBudget(){
         String budgetName = txtFamilyBudgetName.getText().toString().trim();
+        Date date = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        String formattedDate = df.format(date);
 
         if(!TextUtils.isEmpty(budgetName)){
+            txtFamilyBudgetName.setError("Family Budget Name required");
             String id = familyBudgetdatabaseReference.push().getKey();
-            FamilyBudgetModel familyBudgetModel = new FamilyBudgetModel(id,budgetName.toString(),familyExpenseModelList,familyBudgetAmount.toString(),famount.toString(),familyBalance.toString());
+            FamilyBudgetModel familyBudgetModel = new FamilyBudgetModel(id,budgetName.toString(),familyExpenseModelList,familyBudgetAmount.toString(),famount.toString(),familyBalance.toString(),formattedDate);
             familyBudgetdatabaseReference.child(id).setValue(familyBudgetModel);
 
             Toast.makeText(this, "Family Budget is added",Toast.LENGTH_LONG).show();

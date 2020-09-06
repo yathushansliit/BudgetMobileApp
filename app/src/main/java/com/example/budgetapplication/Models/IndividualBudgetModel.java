@@ -1,5 +1,7 @@
 package com.example.budgetapplication.Models;
 
+import android.provider.ContactsContract;
+
 import java.util.List;
 
 public class IndividualBudgetModel {
@@ -9,17 +11,19 @@ public class IndividualBudgetModel {
     public String individualBudgetAmount;
     public String individualTotalBudgetAmount;
     public String individualBudgetBalance;
+    public String individualDate;
 
     public IndividualBudgetModel() {
     }
 
-    public IndividualBudgetModel(String individualBudgetId, String individualBudgetName, List<IndividualExpenseModel> budgetLists, String individualBudgetAmount, String individualTotalBudgetAmount, String individualBudgetBalance) {
+    public IndividualBudgetModel(String individualBudgetId, String individualBudgetName, List<IndividualExpenseModel> budgetLists, String individualBudgetAmount, String individualTotalBudgetAmount, String individualBudgetBalance, String individualDate) {
         this.individualBudgetId = individualBudgetId;
         this.individualBudgetName = individualBudgetName;
         this.budgetLists = budgetLists;
         this.individualBudgetAmount = individualBudgetAmount;
         this.individualTotalBudgetAmount = individualTotalBudgetAmount;
         this.individualBudgetBalance = individualBudgetBalance;
+        this.individualDate = individualDate;
     }
 
     public String getIndividualBudgetId() {
@@ -68,5 +72,13 @@ public class IndividualBudgetModel {
 
     public void setIndividualBudgetBalance(String individualBudgetBalance) {
         this.individualBudgetBalance = individualBudgetBalance;
+    }
+
+    public String getIndividualDate() {
+        return individualDate;
+    }
+
+    public void setIndividualDate(String individualDate) {
+        this.individualDate = individualDate;
     }
 }

@@ -6,101 +6,109 @@
     android:layout_height="wrap_content"
     tools:context=".IndividualListView"
     android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <EditText
+                android:layout_width="277dp"
+                android:layout_height="wrap_content"
+                android:text="Total Items">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/txtTotalItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="Total Items">
+
+            </EditText>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <EditText
+                android:layout_width="277dp"
+                android:layout_height="wrap_content"
+                android:text="Budget Amount">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/txtBudgetAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="Budget Amount">
+
+            </EditText>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <EditText
+                android:layout_width="277dp"
+                android:layout_height="wrap_content"
+                android:text="Balance">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/txtBalance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="Balance">
+            </EditText>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerIndividual"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_above="@+id/linearLayoutsave">
 
     </androidx.recyclerview.widget.RecyclerView>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-
-        <EditText
-            android:layout_width="277dp"
-            android:layout_height="wrap_content"
-            android:text="Total Items"></EditText>
-
-        <EditText
-            android:id="@+id/txtTotalItems"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity=""
-            android:text="Total Items"></EditText>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-
-        <EditText
-            android:layout_width="277dp"
-            android:layout_height="wrap_content"
-            android:text="Budget Amount"></EditText>
-
-        <EditText
-            android:id="@+id/txtBudgetAmount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity=""
-            android:text="Budget Amount"></EditText>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-
-        <EditText
-            android:layout_width="277dp"
-            android:layout_height="wrap_content"
-            android:text="Balance"></EditText>
-
-        <EditText
-            android:id="@+id/txtBalance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity=""
-            android:text="Balance"></EditText>
-
-    </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayoutsave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:gravity="center_horizontal"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recyclerIndividual"
-        app:layout_constraintVertical_bias="1.0">
+        >
 
         <Button
             android:id="@+id/saveIndividual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:background="@drawable/my_button"
             android:text="@string/save"
             android:layout_marginRight="20dp"
             />
 
         <Button
-            android:id="@+id/cancel"
+            android:id="@+id/listviewcancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -109,6 +117,4 @@
 
 
     </LinearLayout>
-
-
 </LinearLayout>

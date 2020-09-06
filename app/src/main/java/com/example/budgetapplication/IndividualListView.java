@@ -25,7 +25,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class IndividualListView extends AppCompatActivity {
@@ -35,7 +38,7 @@ public class IndividualListView extends AppCompatActivity {
     Integer budgetAmount,balance;
     EditText txtTotalAmount,txtBudgetAmount,txtBudgetBalance;
     EditText txtBudgetName;
-    Button btnsave;
+    Button btnsave,btnCancel;
     private ArrayList<String> selectedItemsList;
     Integer amount =0;
 
@@ -51,6 +54,7 @@ public class IndividualListView extends AppCompatActivity {
 
         txtTotalAmount = findViewById(R.id.txtTotalItems);
         txtBudgetAmount = findViewById(R.id.txtBudgetAmount);
+        btnCancel = findViewById(R.id.listviewcancel);
         txtBudgetBalance = findViewById(R.id.txtBalance);
 
         btnsave = findViewById(R.id.saveIndividual);
@@ -59,6 +63,13 @@ public class IndividualListView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showSaveBudgetDialog();
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 
@@ -284,12 +295,17 @@ public class IndividualListView extends AppCompatActivity {
     }
 
     private void saveInduvidualBudget(){
+        Date date = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        String formattedDate = df.format(date);
+
+
         String budgetName = txtBudgetName.getText().toString().trim();
 
         if(!TextUtils.isEmpty(budgetName)){
             String id = individualBudgetDatabaseReference.push().getKey();
-
-            IndividualBudgetModel individualBudgetModel = new IndividualBudgetModel(id,txtBudgetName.toString(),individualExpenseModelList,amount.toString(),balance.toString(),budgetAmount.toString());
+            txtBudgetName.setError("Budget Name required.");
+            IndividualBudgetModel individualBudgetModel = new IndividualBudgetModel(id,budgetName,individualExpenseModelList,amount.toString(),balance.toString(),budgetAmount.toString(),formattedDate);
             individualBudgetDatabaseReference.child(id).setValue(individualBudgetModel);
 
             Toast.makeText(this, "Individual Expense is added",Toast.LENGTH_LONG).show();

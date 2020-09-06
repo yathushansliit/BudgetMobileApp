@@ -9,17 +9,19 @@ public class FamilyBudgetModel {
     public String familyBudgetAmount;
     public String familyTotalBudgetAmount;
     public String familyBudgetBalance;
+    public String familyDate;
 
     public FamilyBudgetModel() {
     }
 
-    public FamilyBudgetModel(String familyBudgetId, String familyBudgetName, List<FamilyExpenseModel> familybudgetLists, String familyBudgetAmount, String familyTotalBudgetAmount, String familyBudgetBalance) {
+    public FamilyBudgetModel(String familyBudgetId, String familyBudgetName, List<FamilyExpenseModel> familybudgetLists, String familyBudgetAmount, String familyTotalBudgetAmount, String familyBudgetBalance, String familyDate) {
         this.familyBudgetId = familyBudgetId;
         this.familyBudgetName = familyBudgetName;
         this.familybudgetLists = familybudgetLists;
         this.familyBudgetAmount = familyBudgetAmount;
         this.familyTotalBudgetAmount = familyTotalBudgetAmount;
         this.familyBudgetBalance = familyBudgetBalance;
+        this.familyDate = familyDate;
     }
 
     public String getFamilyBudgetId() {
@@ -68,5 +70,13 @@ public class FamilyBudgetModel {
 
     public void setFamilyBudgetBalance(String familyBudgetBalance) {
         this.familyBudgetBalance = familyBudgetBalance;
+    }
+
+    public String getFamilyDate() {
+        return familyDate;
+    }
+
+    public void setFamilyDate(String familyDate) {
+        this.familyDate = familyDate;
     }
 }
