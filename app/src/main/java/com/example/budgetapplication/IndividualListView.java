@@ -248,7 +248,6 @@ public class IndividualListView extends AppCompatActivity {
                 txtTotalAmount.setText(amount.toString());
                 balance = budgetAmount-amount;
                 txtBudgetBalance.setText(balance.toString());
-
             }
         }
 
