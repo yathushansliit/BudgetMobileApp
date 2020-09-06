@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 
 public class EventFarewell extends AppCompatActivity {
     EditText txtAmount,txtCrowd;
-    Button btn;
+    Button btn,btn2;
     ArrayList<String> selection = new ArrayList<String>();
 
     @Override
@@ -25,15 +26,33 @@ public class EventFarewell extends AppCompatActivity {
         btn = findViewById(R.id.addFarewell);
         txtAmount = findViewById(R.id.FarewellAmountBd);
         txtCrowd = findViewById(R.id.FarewellCrowdBd);
+        btn2 = findViewById(R.id.farewellcancel);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EventFarewell.this, EventFarewellListView.class);
-                intent.putExtra("selectedFairwellItems", selection);
-                intent.putExtra("FarewellAmount", txtAmount.getText().toString());
-                intent.putExtra("farecrowd", txtCrowd.getText().toString());
+                final String amt =txtAmount.getText().toString().trim();
+                final String crd =txtCrowd.getText().toString().trim();
+                if (TextUtils.isEmpty(amt) && TextUtils.isEmpty(crd)){
+                    txtAmount.setError("Farewell amount is required.");
+                    txtCrowd.setError("Farewell Crowd is required.");
 
-                startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(EventFarewell.this, EventFarewellListView.class);
+                    intent.putExtra("selectedFairwellItems", selection);
+                    intent.putExtra("FarewellAmount", txtAmount.getText().toString());
+                    intent.putExtra("farecrowd", txtCrowd.getText().toString());
+
+                    startActivity(intent);
+                }
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+
             }
         });
     }

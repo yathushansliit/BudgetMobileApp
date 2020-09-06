@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -32,11 +33,28 @@ public class EventOther extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EventOther.this, EventOtherListView.class);
-                intent.putExtra("selectedoTHERItems", selection);
-                intent.putExtra("oTHERAmount", txtAmount.getText().toString());
-                intent.putExtra("Othercrowd", txtCrowd.getText().toString());
-                startActivity(intent);
+                final String amt =txtAmount.getText().toString().trim();
+                final String crd =txtCrowd.getText().toString().trim();
+                if (TextUtils.isEmpty(amt) && TextUtils.isEmpty(crd)){
+                    txtAmount.setError("Event amount is required.");
+                    txtCrowd.setError("Event Crowd is required.");
+
+
+                }else {
+                    Intent intent = new Intent(EventOther.this, EventOtherListView.class);
+                    intent.putExtra("selectedoTHERItems", selection);
+                    intent.putExtra("oTHERAmount", txtAmount.getText().toString());
+                    intent.putExtra("Othercrowd", txtCrowd.getText().toString());
+                    startActivity(intent);
+                }
+            }
+        });
+
+        btnCAncel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+
             }
         });
     }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -32,16 +33,26 @@ public class EventReunion extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EventReunion.this, EventReunionListView.class);
-                intent.putExtra("selectedReunionItems", selection);
-                intent.putExtra("ReunionAmount", txtAmount.getText().toString());
-                intent.putExtra("reunionCrowd", txtCrowd.getText().toString());
-                startActivity(intent);
+                final String amt =txtAmount.getText().toString().trim();
+                final String crd =txtCrowd.getText().toString().trim();
+                if (TextUtils.isEmpty(amt) && TextUtils.isEmpty(crd)){
+                    txtAmount.setError("Reunion amount is required.");
+                    txtCrowd.setError("Reunion Crowd is required.");
+
+                }
+                else {
+                    Intent intent = new Intent(EventReunion.this, EventReunionListView.class);
+                    intent.putExtra("selectedReunionItems", selection);
+                    intent.putExtra("ReunionAmount", txtAmount.getText().toString());
+                    intent.putExtra("reunionCrowd", txtCrowd.getText().toString());
+                    startActivity(intent);
+                }
             }
         });
          btnCancel.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
+                 finish();
 
              }
          });
