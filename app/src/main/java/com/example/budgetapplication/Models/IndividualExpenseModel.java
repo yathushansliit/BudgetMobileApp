@@ -17,6 +17,13 @@ public class IndividualExpenseModel {
         this.expenseType = expenseType;
     }
 
+    public IndividualExpenseModel(String individualExpenseId, String individualExpenseName, String individualExpenseAmount, String individualExpenseDate) {
+        this.individualExpenseId = individualExpenseId;
+        this.individualExpenseName = individualExpenseName;
+        this.individualExpenseAmount = individualExpenseAmount;
+        this.individualExpenseDate = individualExpenseDate;
+    }
+
     public String getIndividualExpenseId() {
         return individualExpenseId;
     }

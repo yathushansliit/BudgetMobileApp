@@ -3,6 +3,7 @@ package com.example.budgetapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +16,12 @@ import android.widget.Toast;
 
 import com.example.budgetapplication.Models.IndividualExpenseModel;
 import com.example.budgetapplication.Models.TotalExpensesModel;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,7 +43,7 @@ public class AddtoBudgetFragment01 extends Fragment implements AdapterView.OnIte
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        databaseIndiviualExpense = FirebaseDatabase.getInstance().getReference("individual");
+        databaseIndiviualExpense = FirebaseDatabase.getInstance().getReference().child("individual");
         databaseTotalExpense = FirebaseDatabase.getInstance().getReference("Expenses");
 
 
@@ -77,28 +82,70 @@ public class AddtoBudgetFragment01 extends Fragment implements AdapterView.OnIte
     }
 
     private void addIndividualExpense(){
-        String expenseName = spinner.getSelectedItem().toString();
-        String amount = txtIndiviualAmount.getText().toString().trim();
-        String date = txtIndiviualDate.getText().toString().trim();
+        final String expenseName = spinner.getSelectedItem().toString();
+        final String amount = txtIndiviualAmount.getText().toString().trim();
+        final String date = txtIndiviualDate.getText().toString().trim();
 
-        if(!TextUtils.isEmpty(amount)){
-            String id = databaseIndiviualExpense.push().getKey();
+        //This method is checking the specific expence in the database, if its already exists the if condition modify the specific expence
+        if(!TextUtils.isEmpty(amount)) {
+            databaseIndiviualExpense.orderByChild("individualExpenseName").equalTo(expenseName).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if(dataSnapshot.exists()) {
+                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                            String id = dataSnapshot1.child("individualExpenseId").getValue().toString();
 
-            IndividualExpenseModel individualExpenseModel = new IndividualExpenseModel(id,expenseName,amount,date,"Individual");
-            databaseIndiviualExpense.child(id).setValue(individualExpenseModel);
+                            DatabaseReference updateDataReference = FirebaseDatabase.getInstance().getReference("individual").child(id);
+                            IndividualExpenseModel individualExpenseModel = new IndividualExpenseModel(id,expenseName,amount,date,"Individual");
+                            updateDataReference.setValue(individualExpenseModel);
 
-            TotalExpensesModel totalExpensesModel = new TotalExpensesModel(id,expenseName,amount,date,"Individual");
-            databaseTotalExpense.child(id).setValue(totalExpensesModel);
+                            DatabaseReference updateTotExpDataRef = FirebaseDatabase.getInstance().getReference("Expenses").child(id);
+                            TotalExpensesModel totalExpensesModel = new TotalExpensesModel(id,expenseName,amount,date,"Individual");
+                            updateTotExpDataRef.setValue(totalExpensesModel);
 
-            Toast.makeText(getActivity(), "Individual Expense is added",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(), "modified",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    else {
+                        String id = databaseIndiviualExpense.push().getKey();
+
+                        IndividualExpenseModel individualExpenseModel = new IndividualExpenseModel(id,expenseName,amount,date,"Individual");
+                        databaseIndiviualExpense.child(id).setValue(individualExpenseModel);
+
+
+                        TotalExpensesModel totalExpensesModel = new TotalExpensesModel(id,expenseName,amount,date,"Individual");
+                        databaseTotalExpense.child(id).setValue(totalExpensesModel);
+
+                        Toast.makeText(getActivity(), "Individual Expense is added",Toast.LENGTH_LONG).show();
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
         }
-        else{
-            Toast.makeText(getActivity(), "You should enter the amount", Toast.LENGTH_LONG).show();
-        }
-
-
-
     }
+
+
+//    ValueEventListener valueEventListener = new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                //individualExpenseList.clear();
+//                if (dataSnapshot.exists()  ) {
+//
+//
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        };
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

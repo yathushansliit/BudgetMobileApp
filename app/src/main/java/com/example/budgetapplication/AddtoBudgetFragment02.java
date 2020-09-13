@@ -14,9 +14,13 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.budgetapplication.Models.FamilyExpenseModel;
+import com.example.budgetapplication.Models.IndividualExpenseModel;
 import com.example.budgetapplication.Models.TotalExpensesModel;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -76,24 +80,51 @@ public class AddtoBudgetFragment02 extends Fragment implements AdapterView.OnIte
     }
 
     private void addFamilyExpense(){
-        String expenseName = spinner.getSelectedItem().toString();
-        String amount = txtFamilyAmount.getText().toString().trim();
-        String date = txtFamilyDate.getText().toString().trim();
+        final String famexpenseName = spinner.getSelectedItem().toString();
+        final String amount = txtFamilyAmount.getText().toString().trim();
+        final String date = txtFamilyDate.getText().toString().trim();
 
-        if(!TextUtils.isEmpty(amount)){
-            String id = databaseFamilyExpense.push().getKey();
-            FamilyExpenseModel familyExpenseModel = new FamilyExpenseModel(id,expenseName,amount,date,"Family");
-            databaseFamilyExpense.child(id).setValue(familyExpenseModel);
+        //This method is checking the specific expence in the database, if its already exists the if condition modify the specific expence
+        if(!TextUtils.isEmpty(amount)) {
+            databaseFamilyExpense.orderByChild("familyExpenseName").equalTo(famexpenseName).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                            String id = dataSnapshot1.child("familyExpenseId").getValue().toString();
 
-            TotalExpensesModel totalExpensesModel = new TotalExpensesModel(id,expenseName,amount,date,"Family");
-            databaseTotalExpense.child(id).setValue(totalExpensesModel);
+                            DatabaseReference updatefamDataReference = FirebaseDatabase.getInstance().getReference("Family").child(id);
+                            FamilyExpenseModel familyExpenseModel = new FamilyExpenseModel(id, famexpenseName, amount, date, "Family");
+                            updatefamDataReference.setValue(familyExpenseModel);
 
-            Toast.makeText(getActivity(), "Family Expense is added",Toast.LENGTH_LONG).show();
+                            DatabaseReference updateTottExpDataRef = FirebaseDatabase.getInstance().getReference("Expenses").child(id);
+                            TotalExpensesModel totalExpensesModel = new TotalExpensesModel(id, famexpenseName, amount, date, "Family");
+                            updateTottExpDataRef.setValue(totalExpensesModel);
+
+                            Toast.makeText(getActivity(), "modified", Toast.LENGTH_LONG).show();
+                        }
+                    } else {
+                        String id = databaseFamilyExpense.push().getKey();
+
+                        FamilyExpenseModel familyExpenseModel = new FamilyExpenseModel(id, famexpenseName, amount, date, "Family");
+                        databaseFamilyExpense.child(id).setValue(familyExpenseModel);
+
+
+                        TotalExpensesModel totalExpensesModel = new TotalExpensesModel(id, famexpenseName, amount, date, "Family");
+                        databaseTotalExpense.child(id).setValue(totalExpensesModel);
+
+                        Toast.makeText(getActivity(), "Family Expense is added", Toast.LENGTH_LONG).show();
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
         }
-        else{
-            Toast.makeText(getActivity(), "You should enter the amount", Toast.LENGTH_LONG).show();
-        }
-
 
 
     }

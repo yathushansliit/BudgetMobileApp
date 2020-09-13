@@ -16,8 +16,11 @@ import android.widget.Toast;
 import com.example.budgetapplication.Models.EventModel;
 import com.example.budgetapplication.Models.IndividualExpenseModel;
 import com.example.budgetapplication.Models.TotalExpensesModel;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -78,22 +81,51 @@ public class AddtoBudgetFragment03 extends Fragment implements AdapterView.OnIte
     }
 
     private void addEventExpense(){
-        String expenseName = spinner.getSelectedItem().toString();
-        String amount = txtEventAmount.getText().toString().trim();
-        String date = txtEventDate.getText().toString().trim();
+        final String expenseName = spinner.getSelectedItem().toString();
+        final String amount = txtEventAmount.getText().toString().trim();
+        final String date = txtEventDate.getText().toString().trim();
 
-        if(!TextUtils.isEmpty(amount)){
-            String id = databaseEventExpense.push().getKey();
-            EventModel eventModel = new EventModel(id,expenseName,amount,date,"Event");
-            databaseEventExpense.child(id).setValue(eventModel);
+        //This method is checking the specific expence in the database, if its already exists the if condition modify the specific expence
+        if(!TextUtils.isEmpty(amount)) {
+            databaseEventExpense.orderByChild("eventExpenseName").equalTo(expenseName).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                            String id = dataSnapshot1.child("eventExpenseId").getValue().toString();
 
-            TotalExpensesModel totalExpensesModel = new TotalExpensesModel(id,expenseName,amount,date,"Event");
-            databaseTotalExpense.child(id).setValue(totalExpensesModel);
+                            DatabaseReference updateDataReference = FirebaseDatabase.getInstance().getReference("Event").child(id);
+                            EventModel eventModel = new EventModel(id, expenseName, amount, date, "Event");
+                            updateDataReference.setValue(eventModel);
 
-            Toast.makeText(getActivity(), "Event Expense is added",Toast.LENGTH_LONG).show();
-        }
-        else{
-            Toast.makeText(getActivity(), "You should enter the amount", Toast.LENGTH_LONG).show();
+                            DatabaseReference updateTootExpDataRef = FirebaseDatabase.getInstance().getReference("Expenses").child(id);
+                            TotalExpensesModel totalExpensesModel = new TotalExpensesModel(id, expenseName, amount, date, "Event");
+                            updateTootExpDataRef.setValue(totalExpensesModel);
+
+                            Toast.makeText(getActivity(), "modified", Toast.LENGTH_LONG).show();
+                        }
+                    } else {
+                        String id = databaseEventExpense.push().getKey();
+
+                        EventModel eventModel = new EventModel(id, expenseName, amount, date, "Event");
+                        databaseEventExpense.child(id).setValue(eventModel);
+
+
+                        TotalExpensesModel totalExpensesModel = new TotalExpensesModel(id, expenseName, amount, date, "Event");
+                        databaseTotalExpense.child(id).setValue(totalExpensesModel);
+
+                        Toast.makeText(getActivity(), "Event Expense is added", Toast.LENGTH_LONG).show();
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+
         }
 
 
