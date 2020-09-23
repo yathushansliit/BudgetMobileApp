@@ -299,7 +299,7 @@ public class IndividualListView extends AppCompatActivity {
         String formattedDate = df.format(date);
         String budgetName = txtBudgetName.getText().toString().trim();
 
-        if(!TextUtils.isEmpty(budgetName)){
+        if(TextUtils.isEmpty(budgetName)){
             txtBudgetName.setError("Budget Name required.");
 
         }
