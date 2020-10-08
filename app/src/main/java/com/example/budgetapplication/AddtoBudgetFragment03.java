@@ -68,9 +68,18 @@ public class AddtoBudgetFragment03 extends Fragment implements AdapterView.OnIte
                 switch (v.getId()) {
 
                     case R.id.AddEventExpenseBtn:
-                        addEventExpense();
-                        Intent intent1 = new Intent(getActivity(), viewExpense.class);
-                        startActivity(intent1);//Edited here
+                        final String expenseName = spinner.getSelectedItem().toString();
+                        final String amount = txtEventAmount.getText().toString().trim();
+                        final String date = txtEventDate.getText().toString().trim();
+                        if(TextUtils.isEmpty(amount)  && TextUtils.isEmpty(date)){
+                            txtEventAmount.setError("Amount is required.");
+                            txtEventDate.setError("Date is required.");
+                        }
+                        else {
+                            addEventExpense();
+                            Intent intent1 = new Intent(getActivity(), viewExpense.class);
+                            startActivity(intent1);//Edited here
+                        }
                         break;
 
 

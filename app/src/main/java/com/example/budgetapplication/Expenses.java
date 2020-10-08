@@ -18,14 +18,7 @@ public class Expenses extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expenses);
 
-        btn = findViewById(R.id.AddTobudget);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Expenses.this, AddtoBudgetExpense.class);
-                startActivity(intent);
-            }
-        });
+
 
         btn01 = findViewById(R.id.AddToExpense);
         btn01.setOnClickListener(new View.OnClickListener() {
@@ -45,14 +38,7 @@ public class Expenses extends AppCompatActivity {
             }
         });
 
-        btn03 = findViewById(R.id.ViewChart);
-        btn03.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Expenses.this, EventBudgetLineChart.class);
-                startActivity(intent);
-            }
-        });
+
 
     }
 }

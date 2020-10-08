@@ -69,9 +69,18 @@ public class AddtoBudgetFragment02 extends Fragment implements AdapterView.OnIte
                 switch (v.getId()) {
 
                     case R.id.AddFamilyExpenseBtn:
-                        addFamilyExpense();
-                        Intent intent1 = new Intent(getActivity(), viewExpense.class);
-                        startActivity(intent1);//Edited here
+                        final String famexpenseName = spinner.getSelectedItem().toString();
+                        final String amount = txtFamilyAmount.getText().toString().trim();
+                        final String date = txtFamilyDate.getText().toString().trim();
+                        if(TextUtils.isEmpty(amount)  && TextUtils.isEmpty(date)){
+                            txtFamilyAmount.setError("Amount is required.");
+                            txtFamilyDate.setError("Date is required.");
+                        }
+                        else {
+                            addFamilyExpense();
+                            Intent intent1 = new Intent(getActivity(), viewExpense.class);
+                            startActivity(intent1);//Edited here
+                        }
                         break;
                 }
             }
