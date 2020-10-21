@@ -91,12 +91,9 @@ public class viewExpense extends AppCompatActivity {
                                       String expenseDate= snapshot.child("expenseDate").getValue().toString();
                                      // String expenseType =snapshot.child("expenseType").getValue().toString();
 
-
-
                                       showUpdateDialog(key,expenseName,expenseAmount,expenseDate);
                                   }
                               }
-
                               @Override
                               public void onCancelled(@NonNull DatabaseError error) {
 
@@ -111,7 +108,6 @@ public class viewExpense extends AppCompatActivity {
     }
 
     private void showUpdateDialog(final String expenseId, String expenseName, String expenseAmount, String expenseDate) {
-
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         LayoutInflater inflater = getLayoutInflater();
         final View dialogView = inflater.inflate(R.layout.update_delete_expense, null);
@@ -124,17 +120,13 @@ public class viewExpense extends AppCompatActivity {
         final Button buttonDelete = (Button) dialogView.findViewById(R.id.DeleteExpenseBtn);
         final Button buttonCancel = (Button) dialogView.findViewById(R.id.CancelExpenseBtn);
 
-
-
        //updateExpenseSpinner.setSelection(Integer.parseInt(expenseName));
         updateExpenseAmount.setText(expenseAmount);
         updateExpenseDate.setText(expenseDate);
 
-
         dialogBuilder.setTitle(expenseName);
         final AlertDialog b = dialogBuilder.create();
         b.show();
-
 
         buttonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -222,6 +222,7 @@ public class EventReunionListView extends AppCompatActivity {
             eventBudgetDatabaseReference.child(id).setValue(eventBudgetModel);
 
             Toast.makeText(this, "Event Budget is added",Toast.LENGTH_LONG).show();
+            finish();
         }
     }
  }

@@ -38,20 +38,11 @@
             android:name=".EventCardView"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".UpdateIncome"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".AddToBudgetTab"
             android:label="@string/title_activity_add_to_budget_tab"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AddExpense"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
             android:name=".viewExpense"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".AddtoBudgetExpense"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".View_Income"
@@ -65,10 +56,6 @@
         <activity
             android:name=".eventListView"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".EventTab"
-            android:label="@string/title_activity_event_tab"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".familyListView"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

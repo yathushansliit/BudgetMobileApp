@@ -88,6 +88,5 @@ public class IndividualBudgetLineChart extends AppCompatActivity {
         individualBudgetBarchart.clear();
         individualBudgetBarchart.setData(lineData);
         individualBudgetBarchart.invalidate();
-
     }
 }

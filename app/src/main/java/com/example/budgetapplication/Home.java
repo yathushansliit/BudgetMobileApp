@@ -47,7 +47,10 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
 
         switch (v.getId()){
 
-            case R.id.individualCard: intent = new Intent(this,Individual1.class); startActivity(intent); break;
+            case R.id.individualCard:
+                    intent = new Intent(this,Individual1.class);
+                    startActivity(intent);
+                    break;
             case R.id.familyCard: intent = new Intent(this,Family.class); startActivity(intent); break;
             case R.id.ExpensesCard: intent = new Intent(this,Expenses.class); startActivity(intent);  break;
             case R.id.incomeCard: intent = new Intent(this,Income.class); startActivity(intent); break;

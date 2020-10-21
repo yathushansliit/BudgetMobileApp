@@ -33,10 +33,12 @@ public class EventBirthday extends AppCompatActivity {
             public void onClick(View v) {
                 final String amt =txtAmount.getText().toString().trim();
                 final String crd =txtCrowd.getText().toString().trim();
-                if (TextUtils.isEmpty(amt) && TextUtils.isEmpty(crd)){
+                if (TextUtils.isEmpty(amt)) {
                     txtAmount.setError("Birthday amount is required.");
-                    txtCrowd.setError("Birthday Crowd is required.");
+                }
 
+                else if (TextUtils.isEmpty(crd)){
+                    txtCrowd.setError("Birthday Crowd is required.");
                 }
                 else
                     {

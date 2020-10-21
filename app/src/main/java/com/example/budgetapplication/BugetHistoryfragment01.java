@@ -65,7 +65,7 @@ public class BugetHistoryfragment01 extends Fragment {
 
             @Override
             protected void onBindViewHolder(@NonNull RecyclerViewAdapterBhIndividual recyclerViewAdapterBhIndividual, int i, @NonNull IndividualBudgetModel individualBudgetModel) {
-                recyclerViewAdapterBhIndividual.tv_item.setText(individualBudgetModel.getIndividualTotalBudgetAmount());
+                recyclerViewAdapterBhIndividual.tv_item.setText(individualBudgetModel.getIndividualBudgetName());
                 recyclerViewAdapterBhIndividual.tv_Date.setText(individualBudgetModel.getIndividualBudgetBalance());
                 recyclerViewAdapterBhIndividual.tv_price.setText(individualBudgetModel.getIndividualBudgetAmount());
             }

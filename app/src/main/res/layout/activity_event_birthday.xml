@@ -290,7 +290,7 @@
             android:id="@+id/bDAycancel"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-
+            android:textColor="@color/black"
             android:text="@string/Cancel"
             android:background="@drawable/my_button01" />
 

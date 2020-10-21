@@ -35,12 +35,15 @@ public class EventOther extends AppCompatActivity {
             public void onClick(View v) {
                 final String amt =txtAmount.getText().toString().trim();
                 final String crd =txtCrowd.getText().toString().trim();
-                if (TextUtils.isEmpty(amt) && TextUtils.isEmpty(crd)){
+                if (TextUtils.isEmpty(amt) ){
                     txtAmount.setError("Event amount is required.");
-                    txtCrowd.setError("Event Crowd is required.");
+                }
 
+                else if (TextUtils.isEmpty(crd)){
+                    txtCrowd.setError("Birthday Crowd is required.");
+                }
 
-                }else {
+                else {
                     Intent intent = new Intent(EventOther.this, EventOtherListView.class);
                     intent.putExtra("selectedoTHERItems", selection);
                     intent.putExtra("oTHERAmount", txtAmount.getText().toString());
